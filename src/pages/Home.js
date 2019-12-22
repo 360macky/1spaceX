@@ -17,6 +17,12 @@ class Home extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
+    const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
+    
+    fetch(Spacex_API)
+      .then(response => response.json())
+      .then(data => console.log(data));
   };
 
   render() {
