@@ -15,7 +15,7 @@ class Home extends React.Component {
     });
   };
 
-  handleSearch = event => {
+  handleSubmit = event => {
     event.preventDefault();
   };
 
@@ -32,7 +32,7 @@ class Home extends React.Component {
           </p>
         </div>
         <div className="m-4">
-          <form onSubmit={this.handleSearch}>
+          <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <input
                 type="text"
