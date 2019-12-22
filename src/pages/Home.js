@@ -5,8 +5,15 @@ class Home extends React.Component {
     super(props);
     this.state = {
       search: ''
-    }
+    };
   }
+
+  handleChange = event => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
   handleSearch = event => {
     event.preventDefault();
