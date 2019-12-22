@@ -1,6 +1,10 @@
 import React from 'react';
 
 class Home extends React.Component {
+  handleSearch = event => {
+    event.preventDefault();
+  };
+
   render() {
     return (
       <div>
@@ -14,7 +18,7 @@ class Home extends React.Component {
           </p>
         </div>
         <div className="m-4">
-          <form>
+          <form onSubmit={this.handleSearch}>
             <div className="form-group">
               <input
                 type="text"
