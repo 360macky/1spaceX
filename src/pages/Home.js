@@ -5,7 +5,8 @@ class Home extends React.Component {
     super(props);
     this.state = {
       search: '',
-      capsulesFounded: ''
+      capsulesFounded: '',
+      isLoadingData: false
     };
   }
 
@@ -18,7 +19,11 @@ class Home extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    
+    this.setState({
+			isLoadingData: true
+    })
+    
     const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
 
     fetch(Spacex_API)
