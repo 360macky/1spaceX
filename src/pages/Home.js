@@ -4,7 +4,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ''
+      search: '',
+      capsulesFounded: ''
     };
   }
 
@@ -19,10 +20,28 @@ class Home extends React.Component {
     event.preventDefault();
 
     const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
-    
+
     fetch(Spacex_API)
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => {
+        let details = null;
+        const capsules_founded = data.filter(capsule => {
+          details = capsule.details;
+          if (details !== null) {
+            if (
+              details.search(this.state.search) !== -1 ||
+              details.search(this.state.search.toLowerCase()) !== -1 ||
+              details.search(this.state.search.toUpperCase()) !== -1
+            ) {
+              return details;
+            }
+          }
+          return false;
+        });
+        this.setState({
+          capsulesFounded: capsules_founded
+        });
+      });
   };
 
   render() {
