@@ -1,5 +1,19 @@
 import React from 'react';
 
+function ResultRow(props) {
+  return (
+      <tbody>
+          <tr>
+              <td>{props.id_capsula}</td>
+              <td>{props.detalles}</td>
+              <td>{props.aterrizajes}</td>
+              <td>{props.estado}</td>
+              <td>{props.tipo}</td>
+          </tr>
+      </tbody>
+  )
+}
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
