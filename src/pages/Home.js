@@ -26,7 +26,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             search: '',
-            capsulesFounded: '',
+            capsulesFounded: {},
             isLoadingData: false
         };
     }
