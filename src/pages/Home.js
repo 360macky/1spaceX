@@ -96,6 +96,17 @@ class Home extends React.Component {
                                     Buscar cápsula
                                 </button>
                             </div>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID de cápsula</th>
+                                        <th scope="col">Detalles</th>
+                                        <th scope="col">Aterrizajes</th>
+                                        <th scope="col">Estado</th>
+                                        <th scope="col">Tipo</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </form>
                 </div>
