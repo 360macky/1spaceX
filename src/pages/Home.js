@@ -1,5 +1,13 @@
 import React from 'react';
 
+function isEmptyObject(object) {
+  for (var key in object) {
+      if (object.hasOwnProperty(key))
+          return false
+  }
+  return true
+}
+
 function ResultRow(props) {
     return (
         <tbody>
