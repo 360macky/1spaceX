@@ -11,11 +11,11 @@ function ResultRow(props) {
     return (
         <tbody>
             <tr>
-                <td>{props.id_capsula}</td>
-                <td>{props.detalles}</td>
-                <td>{props.aterrizajes}</td>
-                <td>{props.estado}</td>
-                <td>{props.tipo}</td>
+                <td>{props.capsule_id}</td>
+                <td>{props.details}</td>
+                <td>{props.landings}</td>
+                <td>{props.status}</td>
+                <td>{props.type}</td>
             </tr>
         </tbody>
     );
@@ -126,6 +126,7 @@ class Home extends React.Component {
                                         <th scope="col">Tipo</th>
                                     </tr>
                                 </thead>
+                              {results}
                             </table>
                         </div>
                     </form>
