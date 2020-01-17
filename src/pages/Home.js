@@ -104,6 +104,8 @@ class Home extends React.Component {
                             <input
                                 type="text"
                                 name="search"
+                                value={this.state.search}
+                                onChange={this.handleChange}
                                 className="form-control w-75 m-auto"
                                 autoComplete="off"
                                 spellCheck="false"
