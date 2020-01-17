@@ -74,17 +74,17 @@ class Home extends React.Component {
 
     render() {
         let results = null;
-        if (!isEmptyObject(this.state.capsulesFounded)) {          
-          results = this.state.capsulesFounded.map((capsule, index) => (
-              <ResultRow
-                  key={index}
-                  capsule_id={capsule.capsule_id}
-                  details={capsule.details}
-                  landings={capsule.landings}
-                  status={capsule.status}
-                  type={capsule.type}
-              />
-          ));
+        if (!isEmptyObject(this.state.capsulesFounded)) {
+            results = this.state.capsulesFounded.map((capsule, index) => (
+                <ResultRow
+                    key={index}
+                    capsule_id={capsule.capsule_id}
+                    details={capsule.details}
+                    landings={capsule.landings}
+                    status={capsule.status}
+                    type={capsule.type}
+                />
+            ));
         }
         return (
             <div>
@@ -128,7 +128,7 @@ class Home extends React.Component {
                                         <th scope="col">Tipo</th>
                                     </tr>
                                 </thead>
-                              {results}
+                                {results}
                             </table>
                         </div>
                     </form>
