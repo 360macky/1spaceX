@@ -4,6 +4,8 @@
 
 Buscador de cápsulas de SpaceX desarrollado en React.
 
+![Captura de pantalla de SpaceX Capsules Search](./screenshot.PNG)
+
 ## 📦 Deployment
 Una vez tienes el repositorio **spacex-capsules-search**, ejecuta este comando desde el directorio del proyecto:
 
