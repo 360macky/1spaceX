@@ -119,7 +119,6 @@ class Home extends React.Component {
                                     type="submit"
                                 >
                                     Buscar cápsula
-                                    &nbsp;<FontAwesomeIcon icon={faRocket} />
                                 </button>
                             </div>
                             <table className="table table-bordered">
