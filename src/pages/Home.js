@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faRocket } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 function isEmptyObject(object) {
@@ -117,6 +119,7 @@ class Home extends React.Component {
                                     type="submit"
                                 >
                                     Buscar cápsula
+                                    &nbsp;<FontAwesomeIcon icon={faRocket} />
                                 </button>
                             </div>
                             <table className="table table-bordered">
