@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 function isEmptyObject(object) {
@@ -89,9 +89,51 @@ class Home extends React.Component {
             ));
         }
         return (
-            <div>
-                <div className="text-center m-4">
-                    <h1 className="display-4">Cápsulas de SpaceX</h1>
+            <div className="cover vh-100">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <div className="container">
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="form-group">
+                                        <input
+                                            type="text"
+                                            name="search"
+                                            value={this.state.search}
+                                            onChange={this.handleChange}
+                                            className="form-control bg-transparent text-light"
+                                            autoComplete="off"
+                                            spellCheck="false"
+                                            placeholder="Por ejemplo: CRS1"
+                                            autoFocus
+                                        />
+                                        <button
+                                            className="btn btn-light m-1"
+                                            type="submit"
+                                        >
+                                            Buscar cápsula
+                                        </button>
+                                    </div>
+                                </form>
+                                    <table className="table table-bordered bg-white shadow-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    ID de cápsula
+                                                </th>
+                                                <th scope="col">Detalles</th>
+                                                <th scope="col">Aterrizajes</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Tipo</th>
+                                            </tr>
+                                        </thead>
+                                        {results}
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="text-center text-light m-4">
                     <p>
                         Un problema bastante frecuente es que se te haya perdido
                         alguna cápsula de SpaceX.
@@ -99,42 +141,6 @@ class Home extends React.Component {
                         Don't worry. We have a SpaceX Capsules Search for you{' '}
                         <span>❤</span>
                     </p>
-                </div>
-                <div className="m-4">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="search"
-                                value={this.state.search}
-                                onChange={this.handleChange}
-                                className="form-control w-75 m-auto"
-                                autoComplete="off"
-                                spellCheck="false"
-                                autoFocus
-                            />
-                            <div className="d-flex justify-content-center m-2">
-                                <button
-                                    className="btn btn-dark btn-lg"
-                                    type="submit"
-                                >
-                                    Buscar cápsula
-                                </button>
-                            </div>
-                            <table className="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID de cápsula</th>
-                                        <th scope="col">Detalles</th>
-                                        <th scope="col">Aterrizajes</th>
-                                        <th scope="col">Estado</th>
-                                        <th scope="col">Tipo</th>
-                                    </tr>
-                                </thead>
-                                {results}
-                            </table>
-                        </div>
-                    </form>
                 </div>
             </div>
         );
