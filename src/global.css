@@ -28,3 +28,13 @@ code {
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
 }
+
+input[name="search"] {
+  padding: 1.5rem;
+  border-radius: 5rem;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 2rem;
+  border-radius: 5rem;
+}

@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 function isEmptyObject(object) {
@@ -101,14 +99,14 @@ class Home extends React.Component {
                                             name="search"
                                             value={this.state.search}
                                             onChange={this.handleChange}
-                                            className="form-control bg-transparent text-light"
+                                            className="form-control bg-transparent text-light mt-5"
                                             autoComplete="off"
                                             spellCheck="false"
                                             placeholder="Por ejemplo: CRS1"
                                             autoFocus
                                         />
                                         <button
-                                            className="btn btn-light m-1"
+                                            className="btn btn-light btn-lg mt-3"
                                             type="submit"
                                         >
                                             Buscar cápsula
