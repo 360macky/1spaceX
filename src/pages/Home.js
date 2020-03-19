@@ -109,6 +109,7 @@ class Home extends React.Component {
                                 className="form-control w-75 m-auto"
                                 autoComplete="off"
                                 spellCheck="false"
+                                autoFocus
                             />
                             <div className="d-flex justify-content-center m-2">
                                 <button
