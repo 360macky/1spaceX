@@ -7,11 +7,39 @@ function isEmptyObject(object) {
     return true;
 }
 
+function MainThead(props) {
+    if (props.results) {
+        return (
+            <thead style={{ backgroundColor: 'black' }}>
+                <tr className="text-white">
+                    <th scope="col" style={{ width: '20%' }}>
+                        ID de cápsula
+                    </th>
+                    <th scope="col" style={{ width: '40%' }}>
+                        Detalles
+                    </th>
+                    <th scope="col" style={{ width: '10%' }}>
+                        Aterrizajes
+                    </th>
+                    <th scope="col" style={{ width: '10%' }}>
+                        Estado
+                    </th>
+                    <th scope="col" style={{ width: '30%' }}>
+                        Tipo
+                    </th>
+                </tr>
+            </thead>
+        );
+    } else {
+        return null;
+    }
+}
+
 function ResultRow(props) {
     return (
         <tbody>
-            <tr>
-                <td>{props.capsule_id}</td>
+            <tr className="text-white bg-transparent">
+                <td className="text-uppercase">{props.capsule_id}</td>
                 <td>{props.details}</td>
                 <td>{props.landings}</td>
                 <td>{props.status}</td>
@@ -93,45 +121,42 @@ class Home extends React.Component {
                         <div className="col-md-12 text-center">
                             <div className="container">
                                 <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group">
+                                    <div className="form-group d-flex flex-column justify-content-center align-items-center">
                                         <input
                                             type="text"
                                             name="search"
                                             value={this.state.search}
                                             onChange={this.handleChange}
-                                            className="form-control bg-transparent text-light mt-5"
+                                            className="form-control bg-transparent text-light mt-5 w-50 font-custom"
+                                            style={{ fontSize: '1.3rem' }}
                                             autoComplete="off"
                                             spellCheck="false"
                                             placeholder="Por ejemplo: CRS1"
                                             autoFocus
                                         />
                                         <button
-                                            className="btn btn-light btn-lg mt-3"
+                                            className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
                                             type="submit"
+                                            disabled={
+                                                this.state.search ? false : true
+                                            }
                                         >
                                             Buscar cápsula
                                         </button>
                                     </div>
                                 </form>
-                                    <table className="table table-bordered bg-white shadow-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">
-                                                    ID de cápsula
-                                                </th>
-                                                <th scope="col">Detalles</th>
-                                                <th scope="col">Aterrizajes</th>
-                                                <th scope="col">Estado</th>
-                                                <th scope="col">Tipo</th>
-                                            </tr>
-                                        </thead>
-                                        {results}
-                                    </table>
+                                <table className="table table-bordered shadow-sm">
+                                    <MainThead results={results} />
+                                    {results}
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="text-center text-light m-4">
+                <div
+                    className="text-center text-light mt-5 w-100 text-center font-custom font-weight-light"
+                    style={{ position: 'absolute', marginBottom: '0px' }}
+                >
                     <p>
                         Un problema bastante frecuente es que se te haya perdido
                         alguna cápsula de SpaceX.
