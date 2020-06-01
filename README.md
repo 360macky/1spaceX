@@ -1,8 +1,8 @@
 <h1 align="center">🚀 SpaceX Capsules Search 🔍</h1>
 
-[![Made with React](https://img.shields.io/static/v1?label=Builded%20with&message=React&color=blue)](https://reactjs.org/)
+<p align="center">Find <a href="https://www.spacex.com/">SpaceX</a> Capsules with details with this <a href="https://reactjs.org/">React App</a></p>
 
-[SpaceX](https://www.spacex.com/) capsule finder developed in [React](https://reactjs.org/) using the [SpaceX API](https://github.com/r-spacex/SpaceX-API).
+<p align="center"><a href="https://reactjs.org/"><img src="https://img.shields.io/static/v1?label=Builded%20with&message=React&color=blue" /></a></p>
 
 ![Screenshoot Home SpaceX Capsules Search](./screenshot_2.PNG)
 ![Screenshoot Results SpaceX Capsules Search](./screenshot_1.PNG)
