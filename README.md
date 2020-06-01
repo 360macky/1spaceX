@@ -2,12 +2,13 @@
 
 [![Made with React](https://img.shields.io/static/v1?label=Builded%20with&message=React&color=blue)](https://reactjs.org/)
 
-Buscador de cápsulas de SpaceX desarrollado en React.
+[SpaceX](https://www.spacex.com/) capsule finder developed in [React](https://reactjs.org/) using the [SpaceX API](https://github.com/r-spacex/SpaceX-API).
 
-![Captura de pantalla de SpaceX Capsules Search](./screenshot.PNG)
+![Screenshoot Home SpaceX Capsules Search](./screenshot_2.PNG)
+![Screenshoot Results SpaceX Capsules Search](./screenshot_1.PNG)
 
 ## 📦 Deployment
-Una vez tienes el repositorio **spacex-capsules-search**, ejecuta este comando desde el directorio del proyecto:
+Once you have the repository ** spacex-capsules-search **, run this command from the project directory:
 
 ```bash
 npm start
