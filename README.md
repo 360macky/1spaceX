@@ -1,4 +1,4 @@
-# SpaceX Capsules Search 🚀
+<h1 align="center">🚀 SpaceX Capsules Search 🔍</h1>
 
 [![Made with React](https://img.shields.io/static/v1?label=Builded%20with&message=React&color=blue)](https://reactjs.org/)
 
@@ -8,7 +8,7 @@
 ![Screenshoot Results SpaceX Capsules Search](./screenshot_1.PNG)
 
 ## 📦 Deployment
-Once you have the repository ** spacex-capsules-search **, run this command from the project directory:
+Once you have the repository **spacex-capsules-search**, run this command from the project directory:
 
 ```bash
 npm start
