@@ -13,19 +13,19 @@ function MainThead(props) {
             <thead style={{ backgroundColor: 'black' }}>
                 <tr className="text-white">
                     <th scope="col" style={{ width: '20%' }}>
-                        ID de cápsula
+                        Capsule ID
                     </th>
                     <th scope="col" style={{ width: '40%' }}>
-                        Detalles
+                        Details
                     </th>
                     <th scope="col" style={{ width: '10%' }}>
-                        Aterrizajes
+                        Landings
                     </th>
                     <th scope="col" style={{ width: '10%' }}>
-                        Estado
+                        State
                     </th>
                     <th scope="col" style={{ width: '30%' }}>
-                        Tipo
+                        Type
                     </th>
                 </tr>
             </thead>
@@ -55,7 +55,8 @@ class Home extends React.Component {
         this.state = {
             search: '',
             capsulesFounded: {},
-            isLoadingData: false
+            isLoadingData: false,
+            searchButton: 'Search Capsule'
         };
     }
 
@@ -71,6 +72,10 @@ class Home extends React.Component {
 
         this.setState({
             isLoadingData: true
+        });
+
+        this.setState({
+            searchButton: 'Loading...'
         });
 
         const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
@@ -92,8 +97,15 @@ class Home extends React.Component {
                             return details;
                         }
                     }
+                    this.setState({
+                        searchButton: 'Search Capsule'
+                    });
                     return false;
                 });
+                this.setState({
+                    searchButton: 'Search Capsule'
+                });
+
                 this.setState({
                     capsulesFounded: capsules_founded
                 });
@@ -131,7 +143,7 @@ class Home extends React.Component {
                                             style={{ fontSize: '1.3rem' }}
                                             autoComplete="off"
                                             spellCheck="false"
-                                            placeholder="Por ejemplo: CRS1"
+                                            placeholder="For example: CRS1"
                                             autoFocus
                                         />
                                         <button
@@ -141,7 +153,7 @@ class Home extends React.Component {
                                                 this.state.search ? false : true
                                             }
                                         >
-                                            Buscar cápsula
+                                        {this.state.searchButton}
                                         </button>
                                     </div>
                                 </form>
@@ -158,8 +170,7 @@ class Home extends React.Component {
                     style={{ position: 'absolute', marginBottom: '0px' }}
                 >
                     <p>
-                        Un problema bastante frecuente es que se te haya perdido
-                        alguna cápsula de SpaceX.
+                    A fairly frequent problem is that you have missed a SpaceX capsule.
                         <br />
                         Don't worry. We have a SpaceX Capsules Search for you{' '}
                         <span>❤</span>
