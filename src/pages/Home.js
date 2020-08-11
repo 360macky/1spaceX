@@ -153,7 +153,7 @@ class Home extends React.Component {
                                         </button>
                                     </div>
                                 </form>
-                                <table className="table table-bordered shadow-sm">
+                                <table className="table table-responsive table-bordered shadow-sm">
                                     <MainThead results={results} />
                                     {results}
                                 </table>
