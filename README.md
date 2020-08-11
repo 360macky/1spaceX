@@ -10,6 +10,11 @@
 ## 📦 Deployment
 Once you have the repository **spacex-capsules-search**, run this command from the project directory:
 
+🔽 Install all dependencies...
+```bash
+npm install
+```
+🚀 Run and launch
 ```bash
 npm start
 ```
