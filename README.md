@@ -4,8 +4,8 @@
 
 <p align="center"><a href="https://reactjs.org/"><img src="https://img.shields.io/static/v1?label=Builded%20with&message=React&color=blue" /></a></p>
 
-![Screenshoot Home SpaceX Capsules Search](./screenshot_2.PNG)
-![Screenshoot Results SpaceX Capsules Search](./screenshot_1.PNG)
+![Screenshoot Home SpaceX Capsules Search](./screenshot_1.PNG)
+![Screenshoot Results SpaceX Capsules Search](./screenshot_2.PNG)
 
 ## 📦 Deployment
 Once you have the repository **spacex-capsules-search**, run this command from the project directory:
