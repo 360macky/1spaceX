@@ -87,13 +87,9 @@ class Home extends React.Component {
                 const capsules_founded = data.filter(capsule => {
                     details = capsule.details;
                     if (details !== null) {
-                        if (
-                            details.search(this.state.search) !== -1 ||
-                            details.search(this.state.search.toLowerCase()) !==
-                                -1 ||
-                            details.search(this.state.search.toUpperCase()) !==
-                                -1
-                        ) {
+                        let searchRegexp = new RegExp(this.state.search, 'i');
+
+                        if (details.search(searchRegexp) !== -1) {
                             return details;
                         }
                     }
