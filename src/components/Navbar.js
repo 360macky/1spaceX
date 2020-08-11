@@ -9,7 +9,7 @@ class Navbar extends React.Component {
       <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "black"}}>
         <Link className="navbar-brand h1 m-0 font-weight-light" to="/">
           <span role="img" className="mr-2" aria-label="rocket"><FontAwesomeIcon icon={faRocket} /></span>
-          Cápsulas de SpaceX
+          SpaceX Capsules
         </Link>
       </nav>
     );
