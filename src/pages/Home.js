@@ -1,5 +1,8 @@
 import React from 'react';
 
+import MainThead from './home/MainThead';
+import ResultRow from './home/ResultRow';
+
 function isEmptyObject(object) {
     for (let key in object) {
         if (object.hasOwnProperty(key)){
@@ -7,48 +10,6 @@ function isEmptyObject(object) {
         }
     }
     return true;
-}
-
-function MainThead(props) {
-    if (props.results) {
-        return (
-            <thead style={{ backgroundColor: 'black' }}>
-                <tr className="text-white">
-                    <th scope="col" style={{ width: '20%' }}>
-                        Capsule ID
-                    </th>
-                    <th scope="col" style={{ width: '40%' }}>
-                        Details
-                    </th>
-                    <th scope="col" style={{ width: '10%' }}>
-                        Landings
-                    </th>
-                    <th scope="col" style={{ width: '10%' }}>
-                        State
-                    </th>
-                    <th scope="col" style={{ width: '30%' }}>
-                        Type
-                    </th>
-                </tr>
-            </thead>
-        );
-    } else {
-        return null;
-    }
-}
-
-function ResultRow(props) {
-    return (
-        <tbody>
-            <tr className="text-white bg-transparent">
-                <td className="text-uppercase">{props.capsule_id}</td>
-                <td>{props.details}</td>
-                <td>{props.landings}</td>
-                <td>{props.status}</td>
-                <td>{props.type}</td>
-            </tr>
-        </tbody>
-    );
 }
 
 class Home extends React.Component {
