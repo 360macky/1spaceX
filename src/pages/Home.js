@@ -18,8 +18,7 @@ class Home extends React.Component {
     this.state = {
       search: '',
       capsulesFounded: {},
-      isLoadingData: false,
-      searchButton: 'Search Capsule',
+      isLoadingData: null,
     };
   }
 
@@ -37,10 +36,6 @@ class Home extends React.Component {
       isLoadingData: true,
     });
 
-    this.setState({
-      searchButton: 'Loading...',
-    });
-
     const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
 
     fetch(Spacex_API)
@@ -56,16 +51,11 @@ class Home extends React.Component {
               return details;
             }
           }
-          this.setState({
-            searchButton: 'Search Capsule',
-          });
           return false;
-        });
-        this.setState({
-          searchButton: 'Search Capsule',
         });
 
         this.setState({
+          isLoadingData: false,
           capsulesFounded: capsules_founded,
         });
       });
@@ -110,7 +100,11 @@ class Home extends React.Component {
                       type="submit"
                       disabled={this.state.search ? false : true}
                     >
-                      {this.state.searchButton}
+                      {this.state.isLoadingData === true ? (
+                        <span>Loading...</span>
+                      ) : (
+                        <span>Search capsule</span>
+                      )}
                     </button>
                   </div>
                 </form>
