@@ -36,9 +36,9 @@ class Home extends React.Component {
       isLoadingData: true,
     });
 
-    const Spacex_API = 'https://api.spacexdata.com/v3/capsules';
+    const SPACEX_API__CAPSULES = 'https://api.spacexdata.com/v3/capsules';
 
-    fetch(Spacex_API)
+    fetch(SPACEX_API__CAPSULES)
       .then((response) => response.json())
       .then((data) => {
         let details = null;
