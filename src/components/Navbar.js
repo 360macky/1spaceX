@@ -4,7 +4,10 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-dark d-flex justify-content-center align-items-center bg-black">
+    <nav
+      className="navbar sticky-top navbar-expand-lg navbar-dark d-flex justify-content-center align-items-center bg-black"
+      style={{ backgroundColor: 'black' }}
+    >
       <a className="navbar-brand h1 m-0 font-weight-light" href="/">
         <span role="img" className="mr-2" aria-label="rocket">
           <FontAwesomeIcon icon={faRocket} />
