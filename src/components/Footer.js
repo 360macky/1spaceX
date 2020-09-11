@@ -9,6 +9,8 @@ function Footer() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        paddingLeft: '5px',
+        paddingRight: '5px'
       }}
     >
       <p className="text-custom">
