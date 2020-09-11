@@ -13,14 +13,14 @@ function Home() {
         <div className="lead text-center">
           <a
             href="/capsules"
-            className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
+            className="btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
           >
             Capsules
           </a>
           &nbsp;
           <a
             href="/launches"
-            className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
+            className="btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
           >
             Launches
           </a>
