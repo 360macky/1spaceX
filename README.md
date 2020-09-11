@@ -2,7 +2,7 @@
   <img
     src=".github/banner.png"
     align="center"
-    width="500"
+    width="600"
     alt="SpaceX Capsules Search"
     title="SpaceX Capsules Search"
   />
