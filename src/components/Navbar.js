@@ -6,7 +6,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav
-        className="navbar navbar-expand-lg navbar-dark"
+        className="navbar sticky-top navbar-expand-lg navbar-dark"
         style={{ backgroundColor: 'black' }}
       >
         <a className="navbar-brand h1 m-0 font-weight-light" href="/">
