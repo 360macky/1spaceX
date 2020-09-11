@@ -5,7 +5,7 @@ function Footer() {
     <div
       className="text-center w-100"
       style={{
-        minHeight: '25vh',
+        minHeight: '100px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -33,11 +33,21 @@ function Footer() {
         </a>{' '}
         |{' '}
         <a
+          href="https://github.com/360macky/spacex-capsules-search/issues"
+          className="text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Issues"
+        >
+          Issues
+        </a>{' '}
+        |{' '}
+        <a
           href="https://www.spacex.com/"
           className="text-white"
           target="_blank"
           rel="noopener noreferrer"
-          title="SpaceX Classical"
+          title="SpaceX Official Website"
         >
           SpaceX Classical
         </a>
