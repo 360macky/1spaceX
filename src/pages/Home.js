@@ -2,7 +2,10 @@ import React from 'react';
 
 function Home() {
   return (
-    <div className="cover--home min-vh-100 d-flex justify-content-center align-items-center">
+    <div
+      className="cover--home d-flex justify-content-center align-items-center"
+      style={{ minHeight: '90vh' }}
+    >
       <div>
         <h1 className="display-4 font-custom text-white text-center">
           Find SpaceX things.
