@@ -21,8 +21,9 @@
 </p>
 
 
-![Screenshoot Home SpaceX Capsules Search](./.github/screenshot_1.PNG)
-![Screenshoot Results SpaceX Capsules Search](./.github/screenshot_2.PNG)
+![Screenshoot Home SpaceX Capsules Search](./.github/screenshot_0.PNG)
+![Screenshoot Capsules Home SpaceX Capsules Search](./.github/screenshot_1.PNG)
+![Screenshoot Capsules Results SpaceX Capsules Search](./.github/screenshot_2.PNG)
 
 ## 📦 Deployment
 
