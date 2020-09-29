@@ -42,6 +42,24 @@ npm start
 ```
 
 
+## 🧪 Testing
+**SpaceX Search App** is integrated with a progressive unit-testing in the core components. This unit-testing is implemented with `@testing-library/react`.
+
+*Footer unit-testing example:*
+```javascript
+import React from 'react';
+import { render } from '@testing-library/react';
+import Footer from './Footer';
+
+describe('Suite test Footer', () => {
+  it('should render GitHub Repository of the footer', () => {
+    const { getByText } = render(<Footer />);
+    const GitHubRepositoryLink = getByText(/GitHub Repository/i);
+    expect(GitHubRepositoryLink).toBeInTheDocument();
+  });
+});
+```
+
 ## 📃 License
 Distributed under the MIT License.
 See [`LICENSE`](./LICENSE) for more information.
