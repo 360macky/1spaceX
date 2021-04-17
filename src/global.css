@@ -37,6 +37,19 @@ code {
   ), url('../src/images/stars-background.jpg');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
+  animation: zoom 22s ease-out infinite;
+}
+
+@keyframes zoom {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {    
+    background-position: center;
+  }
 }
 
 input[name="search"] {
@@ -53,4 +66,34 @@ button[type="submit"] {
   input[name="search"] {
     width: 100% !important;
   }
+  .spacex-X {
+    width: 200px !important;
+  }
+  .spacex-title {
+    font-size: 3rem !important;
+  }
+  .homepage__buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .homepage__button {
+    margin: 0 !important;
+  }
+}
+
+
+.capsule-card {
+  width: 320px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.capsule-card:hover {
+  transform: scale(1.1);
+}
+
+.capsule-card__item {
+  background: transparent !important;
 }
