@@ -1,32 +1,42 @@
 import React from 'react';
+import SpaceX from './spacex.png';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
     <div
-      className="cover--home d-flex justify-content-center align-items-center"
+      className="cover--home d-flex flex-column flex-wrap justify-content-center align-items-center"
       style={{ minHeight: '90vh' }}
     >
+      <img src={SpaceX} style={{ width: '400px' }} className="mb-4 spacex-X" alt="SpaceX logo" />
       <div>
-        <h1 className="display-4 font-custom text-white text-center">
+        <h1 className="display-4 font-custom text-white text-center spacex-title">
           Find SpaceX things.
         </h1>
         <p className="text-white text-center h4">
           Like capsules or launches...
         </p>
-        <div className="lead text-center">
-          <a
-            href="/capsules"
-            className="btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+        <div className="lead text-center homepage__buttons">
+          <Link
+            to="/capsules"
+            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
           >
             Capsules
-          </a>
+          </Link>
           &nbsp;
-          <a
-            href="/launches"
-            className="btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+          <Link
+            to="/cores"
+            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+          >
+            Cores
+          </Link>
+          &nbsp;
+          <Link
+            to="/launches"
+            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
           >
             Launches
-          </a>
+          </Link>
         </div>
       </div>
     </div>
