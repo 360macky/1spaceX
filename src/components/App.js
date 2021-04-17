@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import Footer from '../components/Footer';
 
 import Capsules from '../pages/capsules/Capsules';
+import Cores from '../pages/cores/Cores';
 import Launches from '../pages/launches/Launches';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/capsules" component={Capsules} />
         <Route exact path="/launches" component={Launches} />
+        <Route exact path="/cores" component={Cores} />
       </Switch>
       <Footer />
     </BrowserRouter>
