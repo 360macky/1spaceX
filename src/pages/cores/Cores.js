@@ -103,7 +103,7 @@ class Cores extends React.Component {
                       style={{ fontSize: '1.3rem' }}
                       autoComplete="off"
                       spellCheck="false"
-                      placeholder="For example: CRS1"
+                      placeholder="For example: EXPENDED"
                       autoFocus
                     />
                     <button
