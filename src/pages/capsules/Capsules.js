@@ -3,14 +3,7 @@ import React from 'react';
 import MainThead from '../home/MainThead';
 import ResultRow from '../home/ResultRow';
 
-function isEmptyObject(object) {
-  for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      return false;
-    }
-  }
-  return true;
-}
+import { isEmptyObject } from '../../utils';
 
 class Capsules extends React.Component {
   constructor(props) {
