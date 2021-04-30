@@ -20,6 +20,7 @@ function Home() {
           <Link
             to="/capsules"
             className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+            title="Capsules"
           >
             Capsules
           </Link>
@@ -27,6 +28,7 @@ function Home() {
           <Link
             to="/cores"
             className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+            title="Cores"
           >
             Cores
           </Link>
@@ -34,6 +36,7 @@ function Home() {
           <Link
             to="/launches"
             className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
+            title="Launches"
           >
             Launches
           </Link>
