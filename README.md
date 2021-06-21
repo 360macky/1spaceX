@@ -10,7 +10,7 @@
 
 --- 
 
-<p align="center">🚀 Find <a href="https://www.spacex.com/">SpaceX</a> Capsules with details with this <a href="https://reactjs.org/">React App</a> 🔍</p>
+<p align="center">🚀 Find <a href="https://www.spacex.com/">SpaceX</a> data with this <a href="https://reactjs.org/">React App</a> 🔍</p>
 
 <p align="center">
   <a href="https://nodejs.org/"><img src="https://img.shields.io/static/v1?label=Node&message=v16.12&color=339933&logo=node.js&style=for-the-badge" /></a>
