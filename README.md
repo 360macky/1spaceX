@@ -25,6 +25,7 @@
 ![Screenshoot Capsules Home SpaceX Capsules Search](./.github/screenshot_1.PNG)
 ![Screenshoot Capsules Results SpaceX Capsules Search](./.github/screenshot_2.PNG)
 
+
 ## 📦 Deployment
 
 Once you have the repository **spacex-search**, run this command from the project directory:
@@ -40,6 +41,19 @@ npm install
 ```bash
 npm start
 ```
+
+
+## 🎨 Design
+SpaceX Search has a totally responsive design based on media queries rules and Bootstrap 4 practices.
+You can test it by accessing the web from your mobile browser.
+
+<img
+  src=".github/android_screenshot.png"
+  align="center"
+  width="200"
+  alt="SpaceX Search on Android phone"
+  title="SpaceX Search on Android phone"
+/>
 
 
 ## 🧪 Testing
