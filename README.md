@@ -20,6 +20,14 @@
   <a href="https://github.com/r-spacex/SpaceX-API"><img src="https://img.shields.io/static/v1?label=SpaceX%20API&message=v3&color=000000&logo=spacex&style=for-the-badge" /></a>
 </p>
 
+<p align="center">
+  🤗 Thank you for visiting this space exploration project, help spread it by giving a star 🌟<br />
+  <br />
+  <a href="https://github.com/360macky/spacex-search/stargazers"><img src="https://img.shields.io/github/stars/360macky/spacex-search?label=Star%20this%20repository%21&style=social" /></a><br />
+</p>
+ 
+
+
 
 ![Demo of SpaceX Search](./.github/demo.gif)
 ![Screenshoot Capsules Home SpaceX Capsules Search](./.github/screenshot_1.PNG)
