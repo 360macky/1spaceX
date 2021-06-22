@@ -15,7 +15,7 @@ function Footer() {
     >
       <p className="text-custom">
         <a
-          href="https://github.com/360macky/spacex-capsules-search"
+          href="https://github.com/360macky/spacex-search"
           className="text-white"
           target="_blank"
           rel="noopener noreferrer"
@@ -25,7 +25,7 @@ function Footer() {
         </a>{' '}
         |{' '}
         <a
-          href="https://github.com/360macky/spacex-capsules-search/graphs/contributors"
+          href="https://github.com/360macky/spacex-search/graphs/contributors"
           className="text-white"
           target="_blank"
           rel="noopener noreferrer"
@@ -35,7 +35,7 @@ function Footer() {
         </a>{' '}
         |{' '}
         <a
-          href="https://github.com/360macky/spacex-capsules-search/issues"
+          href="https://github.com/360macky/spacex-search/issues"
           className="text-white"
           target="_blank"
           rel="noopener noreferrer"
