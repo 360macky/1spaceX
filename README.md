@@ -83,6 +83,13 @@ describe('Suite test Footer', () => {
 ```
 
 
+## 📂 Folder Structure of SpaceX Search App
+/src
+-  **/components**: Components used in all the app (including the main App.js)
+-  **/images**: Images used in the app
+-  **/pages**: Pages rendered in the app. Each page has its own folder here.
+
+
 ## 🎁 Dependencies
 - @fortawesome/fontawesome-svg-core: `^1.2.27`
 - @fortawesome/free-solid-svg-icons: `^5.12.1`
