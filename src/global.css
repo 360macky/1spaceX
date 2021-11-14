@@ -24,7 +24,7 @@ code {
     180deg,
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 1)
-  ), url('../src/images/spacex-background.jpg');
+  ), url('../src/images/spacex-background.webp');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
 }
@@ -34,7 +34,7 @@ code {
     180deg,
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 1)
-  ), url('../src/images/stars-background.jpg');
+  ), url('../src/images/stars-background.webp');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   animation: zoom 22s ease-out infinite;
