@@ -116,7 +116,7 @@ class Capsules extends React.Component {
           <p>
             A fairly frequent problem is that you have missed a SpaceX capsule.
             <br />
-            Don't worry. We have a SpaceX Search for you <span>❤</span>
+            Don&apos;t worry. We have a SpaceX Search for you <span>❤</span>
           </p>
         </div>
       </div>
