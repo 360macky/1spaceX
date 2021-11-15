@@ -45,13 +45,17 @@ export const SearchInput = ({ value, onChange }) => {
   );
 };
 
-export const SearchButton = ({ children }) => {
+export const SearchButton = ({ isLoadingData, lookingFor }) => {
   return (
     <button
       className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
       type="submit"
     >
-      {children}
+      {isLoadingData === true ? (
+        <span>Loading...</span>
+      ) : (
+        <span>Search {lookingFor}</span>
+      )}
     </button>
   );
 };
