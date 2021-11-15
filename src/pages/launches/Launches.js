@@ -1,13 +1,5 @@
 import React from 'react';
-
-function isEmptyObject(object) {
-  for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      return false;
-    }
-  }
-  return true;
-}
+import { isEmptyObject } from '../../utils/isEmptyObject';
 
 function MainTheadLaunches(props) {
   if (props.results) {
