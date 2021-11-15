@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmptyObject } from '../../utils';
+import { isEmptyObject } from '../../utils/isEmptyObject';
 
 class Cores extends React.Component {
   constructor(props) {
