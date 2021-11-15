@@ -3,8 +3,8 @@
     src=".github/banner.png"
     align="center"
     width="600"
-    alt="SpaceX Capsules Search"
-    title="SpaceX Capsules Search"
+    alt="SpaceX Search"
+    title="SpaceX Search"
   />
 </p>
 
@@ -30,8 +30,8 @@
 
 
 ![Demo of SpaceX Search](./.github/demo.gif)
-![Screenshoot Capsules Home SpaceX Capsules Search](./.github/screenshot_1.PNG)
-![Screenshoot Capsules Results SpaceX Capsules Search](./.github/screenshot_2.PNG)
+![Screenshoot Capsules Home SpaceX Search](./.github/screenshot_1.PNG)
+![Screenshoot Capsules Results SpaceX Search](./.github/screenshot_2.PNG)
 
 
 ## 📦 Deployment
