@@ -3,7 +3,7 @@ import React from 'react';
 import MainThead from '../home/MainThead';
 import ResultRow from '../home/ResultRow';
 
-import { isEmptyObject } from '../../utils/isEmptyObject';
+import isEmptyObject from '../../utils/isEmptyObject';
 
 class Capsules extends React.Component {
   constructor(props) {

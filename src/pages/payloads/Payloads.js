@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmptyObject } from '../../utils/isEmptyObject';
+import isEmptyObject from '../../utils/isEmptyObject';
 import { PAYLOADS_API } from '../../apis';
 
 class Payloads extends React.Component {

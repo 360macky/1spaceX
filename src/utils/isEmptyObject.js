@@ -1,4 +1,4 @@
-export const isEmptyObject = (object) => {
+const isEmptyObject = (object) => {
   for (let key in object) {
     if (object.hasOwnProperty(key)) {
       return false;
@@ -6,3 +6,5 @@ export const isEmptyObject = (object) => {
   }
   return true;
 };
+
+export default isEmptyObject;
