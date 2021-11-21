@@ -4,6 +4,7 @@ import MainThead from '../home/MainThead';
 import ResultRow from '../home/ResultRow';
 
 import isEmptyObject from '../../utils/isEmptyObject';
+import { SPACEX_API__CAPSULES } from '../../api';
 
 class Capsules extends React.Component {
   constructor(props) {
@@ -28,8 +29,6 @@ class Capsules extends React.Component {
     this.setState({
       isLoadingData: true,
     });
-
-    const SPACEX_API__CAPSULES = 'https://api.spacexdata.com/v3/capsules';
 
     fetch(SPACEX_API__CAPSULES)
       .then((response) => response.json())
