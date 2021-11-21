@@ -6,6 +6,7 @@ import {
   SearchInput,
   SearchButton,
 } from '../../components/Search';
+import CoreResult from './CoreResult';
 
 class Cores extends React.Component {
   constructor(props) {
@@ -60,28 +61,14 @@ class Cores extends React.Component {
     let results = null;
     if (!isEmptyObject(this.state.coresFounded)) {
       results = this.state.coresFounded.map((core, index) => (
-        <div
+        <CoreResult
           key={index}
-          className="card capsule-card bg-transparent border border-white text-white shadow m-3"
-        >
-          <div className="card-body">
-            <h5 className="card-title capsule-title">{core.serial}</h5>
-            <p>{core.last_update}</p>
-          </div>
-          <ul className="list-group list-group-flush text-white">
-            <li className="list-group-item capsule-card__item border border-white">
-              Status: <b>{core.status.toUpperCase()}</b>
-            </li>
-          </ul>
-          <ul className="list-group list-group-flush text-white">
-            <li className="list-group-item capsule-card__item border border-white">
-              Reuse count: <b>{core.reuse_count}</b>
-            </li>
-          </ul>
-          <div className="card-footer">
-            <p>{core.id.toUpperCase()}</p>
-          </div>
-        </div>
+          id={core.id}
+          serial={core.serial}
+          lastUpdate={core.last_update}
+          status={core.status}
+          reuseCount={core.reuse_count}
+        />
       ));
     }
     return (
