@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import AppLogo from '../images/logo.svg';
+import { LOGO_HEIGHT } from '../ui';
 
 function Navbar() {
   return (
@@ -10,10 +12,18 @@ function Navbar() {
       style={{ backgroundColor: 'black' }}
     >
       <Link className="navbar-brand h1 m-0 font-weight-light" to="/">
-        <span role="img" className="mr-2" aria-label="rocket">
+        <span role="img" className="mr-3" aria-label="rocket">
           <FontAwesomeIcon icon={faRocket} />
         </span>
-        SpaceX Search
+        <img
+          src={AppLogo}
+          alt="1spaceX"
+          title="1spaceX"
+          style={{ height: LOGO_HEIGHT }}
+        />
+        <span role="img" className="ml-3" aria-label="rocket">
+          <FontAwesomeIcon icon={faStar} />
+        </span>
       </Link>
     </nav>
   );
