@@ -1,14 +1,14 @@
 <p align="center">
   <img
-    src=".github/banner.png"
+    src="public/logo192.png"
     align="center"
-    width="600"
+    width="100"
     alt="SpaceX Search"
     title="SpaceX Search"
   />
+  <h1 align="center">1spaceX.com</h1>
 </p>
 
---- 
 
 <p align="center">🚀 Find <a href="https://www.spacex.com/">SpaceX</a> data with this <a href="https://reactjs.org/">React App</a> 🔍</p>
 
