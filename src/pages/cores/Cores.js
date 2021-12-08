@@ -7,6 +7,7 @@ import {
   SearchButton,
 } from '../../components/Search';
 import CoreResult from './CoreResult';
+import { SPACEX_API__CORES } from '../../api';
 
 class Cores extends React.Component {
   constructor(props) {
@@ -31,8 +32,6 @@ class Cores extends React.Component {
     this.setState({
       isLoadingData: true,
     });
-
-    const SPACEX_API__CORES = 'https://api.spacexdata.com/v4/cores';
 
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
