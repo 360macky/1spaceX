@@ -1,49 +1,84 @@
 import React from 'react';
 import SpaceX from './spacex.png';
 import { Link } from 'react-router-dom';
+import MacbookPreview from '../images/macbook_preview.webp';
 
 function Home() {
   return (
-    <div
-      className="cover--home d-flex flex-column flex-wrap justify-content-center align-items-center"
-      style={{ minHeight: '90vh' }}
-    >
-      <img src={SpaceX} style={{ width: '400px' }} className="mb-4 spacex-X" alt="SpaceX logo" />
-      <div>
-        <h1 className="display-4 font-custom text-white text-center spacex-title">
-          Find SpaceX things.
-        </h1>
-        <p className="text-white text-center h4">
-          Like capsules or launches...
-        </p>
-        <div className="lead text-center homepage__buttons">
-          <Link
-            to="/capsules"
-            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
-            title="Capsules"
-          >
-            Capsules
-          </Link>
-          &nbsp;
-          <Link
-            to="/cores"
-            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
-            title="Cores"
-          >
-            Cores
-          </Link>
-          &nbsp;
-          <Link
-            to="/launches"
-            className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg"
-            title="Launches"
-          >
-            Launches
-          </Link>
+    <>
+      <div
+        className="cover--home d-flex flex-column flex-wrap justify-content-center align-items-center"
+        style={{ minHeight: '90vh' }}
+      >
+        <HomeXLogo />
+        <div>
+          <h1 className="display-4 font-custom text-white text-center spacex-title">
+            Find SpaceX things.
+          </h1>
+          <p className="text-white text-center h4">
+            Like capsules or launches...
+          </p>
+          <div className="lead text-center homepage__buttons">
+            <HomeButton to="/capsules" title="Capsules" />
+            <HomeButton to="/cores" title="Cores" />
+            <HomeButton to="/launches" title="Launches" />
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        className="container font-custom d-flex flex-column flex-wrap justify-content-center align-items-center"
+        style={{ minHeight: '90vh' }}
+      >
+        <HomeSectionTitle text="Are you ready for lift off?" />
+        <div className="d-flex justify-content-center align-items-center text-white">
+          <img
+            src={MacbookPreview}
+            style={{ width: '50%', padding: '5px', borderRadius: '25px' }}
+          />
+          <div style={{ marginLeft: '15px' }}>
+            <h3>How it works?</h3>
+            <p>1. Click on your space exploration component.</p>
+            <p>
+              2. Enter the search or keyword of the component you are looking
+              for.
+            </p>
+            <p>3. Get the results you want!</p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
+
+const HomeButton = ({ title, to }) => {
+  return (
+    <Link
+      to={to}
+      className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg mx-1"
+      title={title}
+    >
+      {title}
+    </Link>
+  );
+};
+
+const HomeSectionTitle = ({ text }) => {
+  return (
+    <h2 className="text-white text-center" style={{ marginBottom: '15px' }}>
+      {text}
+    </h2>
+  );
+};
+
+const HomeXLogo = () => {
+  return (
+    <img
+      src={SpaceX}
+      style={{ width: '400px' }}
+      className="mb-4 spacex-X"
+      alt="SpaceX logo"
+    />
+  );
+};
 
 export default Home;
