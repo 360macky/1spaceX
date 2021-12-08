@@ -1,27 +1,28 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true,
+    "jest": true
   },
-  "extends": "plugin:react/recommended",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "arrowFunctions": true
     },
-    "ecmaVersion": 2015,
-    "sourceType": "module",
     "babelOptions": {
       "presets": ["@babel/preset-react"]
-    }
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
   },
   "plugins": ["react"],
   "rules": {
-    "react/prop-types": "off"
-  },
-  "parser": "@babel/eslint-parser",
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "react/prop-types": "off",
+    "no-use-before-define": "off",
+    "no-prototype-builtins": "off",
+    "no-nonoctal-decimal-escape": "off"
   }
 }
