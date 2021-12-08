@@ -108,16 +108,6 @@ class Capsules extends React.Component {
             </div>
           </div>
         </div>
-        <div
-          className="text-center text-light mt-5 w-100 text-center font-custom font-weight-light"
-          style={{ position: 'absolute', marginBottom: '0px' }}
-        >
-          <p>
-            A fairly frequent problem is that you have missed a SpaceX capsule.
-            <br />
-            Don&apos;t worry. We have a SpaceX Search for you <span>❤</span>
-          </p>
-        </div>
       </div>
     );
   }
