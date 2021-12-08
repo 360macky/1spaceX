@@ -22,6 +22,7 @@
   "rules": {
     "react/prop-types": "off",
     "no-use-before-define": "off",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "no-nonoctal-decimal-escape": "off"
   }
 }
