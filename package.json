@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": false,
   "description": "Search platform for SpaceX complex physical items",
+  "author": {
+    "name": "Marcelo Arias",
+    "email": "hola@marceloarias.com",
+    "url": "https://marceloarias.com"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
