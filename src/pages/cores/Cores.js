@@ -27,6 +27,17 @@ class Cores extends React.Component {
     });
   };
 
+  getResults = (searchTerm) => {
+    let lastUpdate = searchTerm.last_update;
+    if (lastUpdate !== null) {
+      let searchRegExp = new RegExp(this.state.search, 'i');
+      if (lastUpdate.search(searchRegExp) !== -1) {
+        return lastUpdate;
+      }
+    }
+    return false;
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -37,22 +48,10 @@ class Cores extends React.Component {
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
       .then((data) => {
-        let lastUpdate = null;
-        const coresFounded = data.filter((core) => {
-          lastUpdate = core.last_update;
-          if (lastUpdate !== null) {
-            let searchRegExp = new RegExp(this.state.search, 'i');
-
-            if (lastUpdate.search(searchRegExp) !== -1) {
-              return lastUpdate;
-            }
-          }
-          return false;
-        });
-
+        const coresFounded = data.filter((core) => this.getResults(core));
         this.setState({
           isLoadingData: false,
-          coresFounded: coresFounded,
+          coresFounded,
         });
       });
   };
