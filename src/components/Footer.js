@@ -1,5 +1,19 @@
 import React from 'react';
 
+const FooterLink = ({ text, to }) => {
+  return (
+    <a
+      href={to}
+      className="text-white mx-2"
+      target="_blank"
+      rel="noopener noreferrer"
+      title={text}
+    >
+      {text}
+    </a>
+  );
+};
+
 function Footer() {
   return (
     <div
@@ -14,55 +28,20 @@ function Footer() {
       }}
     >
       <p className="text-custom">
-        <a
-          href="https://github.com/360macky/spacex-search"
-          className="text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub Repository"
-        >
-          GitHub Repository
-        </a>{' '}
-        |{' '}
-        <a
-          href="https://github.com/360macky/spacex-search/graphs/contributors"
-          className="text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Contributors"
-        >
-          Contributors
-        </a>{' '}
-        |{' '}
-        <a
-          href="https://github.com/360macky/spacex-search/issues"
-          className="text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Issues"
-        >
-          Issues
-        </a>{' '}
-        |{' '}
-        <a
-          href="https://marceloarias.com"
-          className="text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="@360macky"
-        >
-          @360macky
-        </a>{' '}
-        |{' '}
-        <a
-          href="https://www.spacex.com/"
-          className="text-white"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="SpaceX Official Website"
-        >
-          SpaceX Classical
-        </a>
+        <FooterLink
+          to="https://github.com/360macky/1spaceX"
+          text="GitHub Repository"
+        />
+        <FooterLink
+          to="https://github.com/360macky/1spaceX/graphs/contributors"
+          text="Contributors"
+        />
+        <FooterLink
+          to="https://github.com/360macky/1spaceX/issues"
+          text="Issues"
+        />
+        <FooterLink to="https://marceloarias.com" text="@360macky" />
+        <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" />
       </p>
     </div>
   );
