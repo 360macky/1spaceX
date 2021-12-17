@@ -2,6 +2,7 @@
   "name": "1spacex",
   "version": "0.1.0",
   "private": false,
+  "description": "Search platform for SpaceX complex physical items",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
