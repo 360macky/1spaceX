@@ -2,7 +2,6 @@ import React from 'react';
 
 const CoreResult = ({
   key,
-  index,
   id,
   serial,
   lastUpdate,
