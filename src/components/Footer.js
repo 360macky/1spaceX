@@ -17,32 +17,29 @@ const FooterLink = ({ text, to }) => {
 function Footer() {
   return (
     <div
-      className="text-center w-100"
+      className="text-center w-100 text-custom"
       style={{
         minHeight: '100px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingLeft: '5px',
-        paddingRight: '5px'
+        flexWrap: 'wrap',
       }}
     >
-      <p className="text-custom">
-        <FooterLink
-          to="https://github.com/360macky/1spaceX"
-          text="GitHub Repository"
-        />
-        <FooterLink
-          to="https://github.com/360macky/1spaceX/graphs/contributors"
-          text="Contributors"
-        />
-        <FooterLink
-          to="https://github.com/360macky/1spaceX/issues"
-          text="Issues"
-        />
-        <FooterLink to="https://marceloarias.com" text="@360macky" />
-        <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" />
-      </p>
+      <FooterLink
+        to="https://github.com/360macky/1spaceX"
+        text="GitHub Repository"
+      />
+      <FooterLink
+        to="https://github.com/360macky/1spaceX/graphs/contributors"
+        text="Contributors"
+      />
+      <FooterLink
+        to="https://github.com/360macky/1spaceX/issues"
+        text="Issues"
+      />
+      <FooterLink to="https://marceloarias.com" text="@360macky" />
+      <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" />
     </div>
   );
 }
