@@ -45,6 +45,16 @@ function Footer() {
         </a>{' '}
         |{' '}
         <a
+          href="https://marceloarias.com"
+          className="text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="@360macky"
+        >
+          @360macky
+        </a>{' '}
+        |{' '}
+        <a
           href="https://www.spacex.com/"
           className="text-white"
           target="_blank"
