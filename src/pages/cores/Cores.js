@@ -1,5 +1,6 @@
 import React from 'react';
 import isEmptyObject from '../../utils/isEmptyObject';
+import getResults from '../../utils/getResults';
 import {
   ResultsContainer,
   SearchContainer,
@@ -27,17 +28,6 @@ class Cores extends React.Component {
     });
   };
 
-  getResults = (searchTerm, searchProperty, searchList) => {
-    let resultsTerm = searchTerm[searchProperty];
-    if (resultsTerm !== null) {
-      let searchRegExp = new RegExp(searchList, 'i');
-      if (resultsTerm.search(searchRegExp) !== -1) {
-        return resultsTerm;
-      }
-    }
-    return false;
-  };
-
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -49,7 +39,7 @@ class Cores extends React.Component {
       .then((response) => response.json())
       .then((data) => {
         const coresFounded = data.filter((core) =>
-          this.getResults(core, 'last_update', this.state.search)
+          getResults(core, 'last_update', this.state.search)
         );
         this.setState({
           isLoadingData: false,
