@@ -4,7 +4,7 @@ const FooterLink = ({ text, to }) => {
   return (
     <a
       href={to}
-      className="text-white mx-2"
+      className="text-dark mx-2"
       target="_blank"
       rel="noopener noreferrer"
       title={text}
@@ -17,13 +17,14 @@ const FooterLink = ({ text, to }) => {
 function Footer() {
   return (
     <div
-      className="text-center w-100 text-custom"
+      className="text-center w-100 text-custom py-4"
       style={{
         minHeight: '100px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexWrap: 'wrap',
+        backgroundColor: 'white',
       }}
     >
       <FooterLink
