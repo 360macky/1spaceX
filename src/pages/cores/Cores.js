@@ -1,5 +1,6 @@
 import React from 'react';
 import isEmptyObject from '../../utils/isEmptyObject';
+import getResults from '../../utils/getResults';
 import {
   ResultsContainer,
   SearchContainer,
@@ -28,17 +29,6 @@ class Cores extends React.Component {
     });
   };
 
-  getResults = (searchTerm) => {
-    let lastUpdate = searchTerm.last_update;
-    if (lastUpdate !== null) {
-      let searchRegExp = new RegExp(this.state.search, 'i');
-      if (lastUpdate.search(searchRegExp) !== -1) {
-        return lastUpdate;
-      }
-    }
-    return false;
-  };
-
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -49,7 +39,9 @@ class Cores extends React.Component {
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
       .then((data) => {
-        const coresFounded = data.filter((core) => this.getResults(core));
+        const coresFounded = data.filter((core) =>
+          getResults(core, 'last_update', this.state.search)
+        );
         this.setState({
           isLoadingData: false,
           coresFounded,

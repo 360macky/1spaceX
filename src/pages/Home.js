@@ -30,17 +30,17 @@ function Home() {
         style={{ minHeight: '90vh' }}
       >
         <HomeSectionTitle text="Are you ready for lift off?" />
-        <div className="d-flex justify-content-center align-items-center text-white">
+        <div className="d-flex flex-row justify-content-center align-items-center text-white flex-wrap">
           <img
             src={MacbookPreview}
-            style={{ width: '50%', padding: '5px', borderRadius: '25px' }}
+            style={{ width: '35%', padding: '5px', borderRadius: '25px' }}
           />
           <div style={{ marginLeft: '15px' }}>
             <h3>How it works?</h3>
             <p>1. Click on your space exploration component.</p>
             <p>
-              2. Enter the search or keyword of the component you are looking
-              for.
+              2. Enter the search or keyword of the component <br />
+              you are looking for.
             </p>
             <p>3. Get the results you want!</p>
           </div>
