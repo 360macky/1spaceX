@@ -20,50 +20,46 @@ code {
 }
 
 .cover {
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 1)
-  ), url('../src/images/spacex-background.webp');
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
+  background-color: #000000;
 }
 
 .cover--home {
   background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 1)
-  ), url('../src/images/stars-background.webp');
+      180deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 1)
+    ),
+    url('https://i.imgur.com/W4xrRfR.jpg');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
-  animation: zoom 22s ease-out infinite;
+  animation: spaceTransition 24s ease-out infinite;
 }
 
-@keyframes zoom {
-  0% {
-    background-position: center;
+@keyframes spaceTransition {
+  0%,
+  80% {
+    background-position: top;
   }
-  50% {
-    background-position: bottom;
-  }
-  100% {    
-    background-position: center;
+  40% {
+    background-position: center center;
   }
 }
 
-input[name="search"] {
+input[name='search'] {
   padding: 1.5rem;
   border-radius: 5rem;
 }
 
-button[type="submit"] {
+button[type='submit'] {
   padding: 0.5rem 2rem;
   border-radius: 5rem;
 }
 
-@media (max-width: 425px) {  
-  input[name="search"] {
+@media (max-width: 425px) {
+  .cover--home {
+    animation: none !important;
+  }
+  input[name='search'] {
     width: 100% !important;
   }
   .spacex-X {
@@ -81,7 +77,6 @@ button[type="submit"] {
     margin: 0 !important;
   }
 }
-
 
 .capsule-card {
   width: 320px;

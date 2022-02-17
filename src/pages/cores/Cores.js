@@ -1,5 +1,6 @@
 import React from 'react';
 import isEmptyObject from '../../utils/isEmptyObject';
+import getResults from '../../utils/getResults';
 import {
   ResultsContainer,
   SearchContainer,
@@ -7,6 +8,9 @@ import {
   SearchButton,
 } from '../../components/Search';
 import CoreResult from './CoreResult';
+import { SPACEX_API__CORES } from '../../api';
+
+import { SPACEX_API__CORES } from '../../api';
 
 class Cores extends React.Component {
   constructor(props) {
@@ -32,27 +36,15 @@ class Cores extends React.Component {
       isLoadingData: true,
     });
 
-    const SPACEX_API__CORES = 'https://api.spacexdata.com/v4/cores';
-
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
       .then((data) => {
-        let lastUpdate = null;
-        const coresFounded = data.filter((core) => {
-          lastUpdate = core.last_update;
-          if (lastUpdate !== null) {
-            let searchRegExp = new RegExp(this.state.search, 'i');
-
-            if (lastUpdate.search(searchRegExp) !== -1) {
-              return lastUpdate;
-            }
-          }
-          return false;
-        });
-
+        const coresFounded = data.filter((core) =>
+          getResults(core, 'last_update', this.state.search)
+        );
         this.setState({
           isLoadingData: false,
-          coresFounded: coresFounded,
+          coresFounded,
         });
       });
   };

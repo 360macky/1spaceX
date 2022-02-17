@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Capsules from '../pages/capsules/Capsules';
 import Cores from '../pages/cores/Cores';
 import Launches from '../pages/launches/Launches';
+import About from '../pages/about/About';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/capsules" component={Capsules} />
         <Route exact path="/launches" component={Launches} />
         <Route exact path="/cores" component={Cores} />
+        <Route exact path="/about" component={About} />
       </Switch>
       <Footer />
     </BrowserRouter>
