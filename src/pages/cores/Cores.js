@@ -10,8 +10,6 @@ import {
 import CoreResult from './CoreResult';
 import { SPACEX_API__CORES } from '../../api';
 
-import { SPACEX_API__CORES } from '../../api';
-
 class Cores extends React.Component {
   constructor(props) {
     super(props);
