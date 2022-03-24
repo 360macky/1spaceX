@@ -47,6 +47,7 @@ class Launches extends React.Component {
       capsulesFounded: {},
       isLoadingData: null,
     };
+    this.getLaunches();
   }
 
   handleChange = (event) => {
@@ -56,11 +57,19 @@ class Launches extends React.Component {
       isLoadingData: true,
     });
 
-    const SPACEX_API_LAUNCHES = 'https://api.spacexdata.com/v4/launches';
+    this.getLaunches();
+  };
 
-    fetch(SPACEX_API_LAUNCHES)
+  getLaunches(){
+    fetch('https://api.spacexdata.com/v4/launches')
       .then((response) => response.json())
       .then((data) => {
+        if (this.state.search.length < 0) {
+          this.setState({
+            isLoadingData: false,
+            capsulesFounded: data,
+          });
+        }
         let details = null;
         let launchesFound = data.filter((capsule) => {
           details = capsule.details;
@@ -79,7 +88,7 @@ class Launches extends React.Component {
           capsulesFounded: launchesFound,
         });
       });
-  };
+  }
 
   render() {
     let results = null;
