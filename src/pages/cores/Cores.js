@@ -18,6 +18,7 @@ class Cores extends React.Component {
       coresFounded: {},
       isLoadingData: null,
     };
+    this.getCores();
   }
 
   handleChange = (event) => {
@@ -34,9 +35,19 @@ class Cores extends React.Component {
       isLoadingData: true,
     });
 
+    this.getCores();
+  };
+
+  getCores(){
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
       .then((data) => {
+        if (this.state.search.length < 0) {
+          this.setState({
+            isLoadingData: false,
+            coresFounded: data,
+          });
+        }
         const coresFounded = data.filter((core) =>
           getResults(core, 'last_update', this.state.search)
         );
@@ -45,7 +56,7 @@ class Cores extends React.Component {
           coresFounded,
         });
       });
-  };
+  }
 
   render() {
     let results = null;
