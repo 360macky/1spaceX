@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import '../global.css';
 
 const FooterLink = ({ text, to }) => {
   return (
     <a
       href={to}
-      className="text-white mx-2"
+      className="footer-text mx-2"
       target="_blank"
       rel="noopener noreferrer"
       title={text}
@@ -17,21 +18,23 @@ const FooterLink = ({ text, to }) => {
 
 function Footer() {
   return (
-    <FooterContainer className="w-100 text-custom py-4">
+    <FooterContainer className="w-100 footer text-custom py-4">
+      <div className='footer-content'>
       <FooterLink
         to="https://github.com/360macky/1spaceX"
-        text="GitHub Repository"
+        text="Repository"
       />
-      <FooterLink
+      {/* <FooterLink
         to="https://github.com/360macky/1spaceX/graphs/contributors"
         text="Contributors"
-      />
-      <FooterLink
+      /> */}
+      {/* <FooterLink
         to="https://github.com/360macky/1spaceX/issues"
         text="Issues"
-      />
+      /> */}
       <FooterLink to="https://marceloarias.com" text="@360macky" />
-      <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" />
+      {/* <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" /> */}
+      </div>
     </FooterContainer>
   );
 }

@@ -10,6 +10,27 @@ body {
   background-color: black !important;
 }
 
+.footer {
+  position: fixed;
+  color: black;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  padding: 15px 30px 15px 30px;
+  border-radius: 50px;
+  background-color: white;
+}
+
+.footer-text {
+  color: black;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
