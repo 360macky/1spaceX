@@ -13,7 +13,7 @@ body {
 .footer {
   position: fixed;
   color: black;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
@@ -22,7 +22,7 @@ body {
 }
 
 .footer-content {
-  padding: 15px 30px 15px 30px;
+  padding: 15px 30px;
   border-radius: 50px;
   background-color: white;
 }
