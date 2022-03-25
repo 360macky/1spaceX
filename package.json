@@ -52,5 +52,17 @@
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-react": "^7.27.1",
     "husky": "^7.0.4"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Marcelo Arias",
+      "email": "hola@marceloarias.com",
+      "url": "https://marceloarias.com"
+    },
+    {
+      "name": "Lewis",
+      "email": "louislaizer4@gmail.com",
+      "url": "https://thirsty-ritchie-2c12b7.netlify.app/"
+    }
+  ]
 }
