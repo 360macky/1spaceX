@@ -14,6 +14,7 @@ class Capsules extends React.Component {
       capsulesFounded: {},
       isLoadingData: null,
     };
+    this.getCapsules();
   }
 
   handleChange = (event) => {
@@ -30,9 +31,20 @@ class Capsules extends React.Component {
       isLoadingData: true,
     });
 
+    this.getCapsules();
+  };
+
+  getCapsules(){
     fetch(SPACEX_API__CAPSULES)
       .then((response) => response.json())
       .then((data) => {
+        if (this.state.search.length < 0) {
+          this.setState({
+            isLoadingData: false,
+            capsulesFounded: data,
+          });
+        }
+
         let details = null;
         const capsules_founded = data.filter((capsule) => {
           details = capsule.details;
@@ -51,7 +63,7 @@ class Capsules extends React.Component {
           capsulesFounded: capsules_founded,
         });
       });
-  };
+  }
 
   render() {
     let results = null;
