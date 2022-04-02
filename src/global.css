@@ -66,11 +66,6 @@ code {
   }
 }
 
-input[name='search'] {
-  padding: 1.5rem;
-  border-radius: 5rem;
-}
-
 button[type='submit'] {
   padding: 0.5rem 2rem;
   border-radius: 5rem;
