@@ -3,8 +3,8 @@
     src="public/logo192.png"
     align="center"
     width="100"
-    alt="SpaceX Search"
-    title="SpaceX Search"
+    alt="1spaceX"
+    title="1spaceX"
   />
   <h1 align="center">1spaceX.com</h1>
 </p>
@@ -29,9 +29,9 @@
 
 
 
-![Demo of SpaceX Search](./.github/demo.gif)
-![Screenshoot Capsules Home SpaceX Search](./.github/screenshot_1.PNG)
-![Screenshoot Capsules Results SpaceX Search](./.github/screenshot_2.PNG)
+![Demo of 1spaceX](./.github/demo.gif)
+![Screenshoot Capsules Home 1spaceX](./.github/screenshot_1.PNG)
+![Screenshoot Capsules Results 1spaceX](./.github/screenshot_2.PNG)
 
 
 ## 📦 Deployment
@@ -50,22 +50,28 @@ npm install
 npm start
 ```
 
+🧪 Run tests
+
+```bash
+npm test
+```
+
 
 ## 🎨 Design
-SpaceX Search has a totally responsive design based on media queries rules and Bootstrap 4 practices.
+1spaceX has a totally responsive design based on media queries rules and Bootstrap 5 practices.
 You can test it by accessing the web from your mobile browser.
 
 <img
   src=".github/android_screenshot.png"
   align="center"
   width="200"
-  alt="SpaceX Search on Android phone"
-  title="SpaceX Search on Android phone"
+  alt="1spaceX on Android phone"
+  title="1spaceX on Android phone"
 />
 
 
 ## 🧪 Testing
-**SpaceX Search App** is integrated with a progressive unit-testing in the core components. This unit-testing is implemented with `@testing-library/react`.
+**1spaceX** is integrated with a progressive unit-testing in the core components. This unit-testing is implemented with `@testing-library/react`.
 
 *Footer unit-testing example:*
 ```javascript
@@ -83,11 +89,12 @@ describe('Suite test Footer', () => {
 ```
 
 
-## 📂 Folder Structure of SpaceX Search App
+## 📂 Folder Structure of 1spaceX App
 /src
 -  **/components**: Components used in all the app (including the main App.js)
 -  **/images**: Images used in the app
 -  **/pages**: Pages rendered in the app. Each page has its own folder here.
+-  **/utils**: Utility functions.
 
 
 ## 🎁 Dependencies
