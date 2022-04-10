@@ -91,17 +91,19 @@ describe('Suite test Footer', () => {
 
 
 ## 🎁 Dependencies
-- @fortawesome/fontawesome-svg-core: `^1.2.27`
-- @fortawesome/free-solid-svg-icons: `^5.12.1`
-- @fortawesome/react-fontawesome: `^0.1.9`
-- @testing-library/jest-dom: `^4.2.4`
-- @testing-library/react: `^9.3.2`
-- @testing-library/user-event: `^7.1.2`
-- bootstrap: `^4.4.1`
-- react: `^16.12.0`
-- react-dom: `^16.12.0`
-- react-router-dom: `^5.1.2`
-- react-scripts: `4.0.0`
+Current versions of our dependencies:
+- @fortawesome/fontawesome-svg-core: `^6.1.1`
+- @fortawesome/free-solid-svg-icons: `^6.1.1`
+- @fortawesome/react-fontawesome: `^0.1.18`
+- @testing-library/jest-dom: `^5.16.3`
+- @testing-library/react: `^13.0.0`
+- @testing-library/user-event: `^14.0.4`
+- bootstrap: `^5.1.3`
+- react: `^18.0.0`
+- react-dom: `^18.0.0`
+- react-router-dom: `^6.3.0`
+- react-scripts: `5.0.0`
+- styled-components: `5.3.5`
 
 
 ## 🤲 Contributing
