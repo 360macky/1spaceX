@@ -12,7 +12,7 @@ function Navbar() {
       style={{ backgroundColor: 'black' }}
     >
       <Link className="navbar-brand h1 m-0 font-weight-light" to="/">
-        <span role="img" className="mr-3" aria-label="rocket">
+        <span role="img" className="me-3" aria-label="rocket">
           <FontAwesomeIcon icon={faRocket} />
         </span>
         <img
@@ -21,7 +21,7 @@ function Navbar() {
           title="1spaceX"
           style={{ height: LOGO_HEIGHT }}
         />
-        <span role="img" className="ml-3" aria-label="rocket">
+        <span role="img" className="ms-3" aria-label="rocket">
           <FontAwesomeIcon icon={faStar} />
         </span>
       </Link>
