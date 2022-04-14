@@ -3,10 +3,11 @@ import React from 'react';
 const CoreResult = ({
   key,
   id,
-  serial,
   lastUpdate,
+  serial,
   status,
-  reuseCount,
+  type,
+  reuseCount
 }) => {
   return (
     <div
@@ -20,6 +21,11 @@ const CoreResult = ({
       <ul className="list-group list-group-flush text-white">
         <li className="list-group-item capsule-card__item border border-white text-white">
           Status: <b>{status.toUpperCase()}</b>
+        </li>
+      </ul>
+      <ul className="list-group list-group-flush text-white">
+        <li className="list-group-item capsule-card__item border border-white text-white">
+          Type: <b>{type.toUpperCase()}</b>
         </li>
       </ul>
       <ul className="list-group list-group-flush text-white">

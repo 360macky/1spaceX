@@ -36,7 +36,7 @@ export const SearchInput = ({ value, onChange }) => {
       value={value}
       onChange={onChange}
       className="form-control bg-transparent text-light mt-5 w-50 font-custom"
-      style={{ fontSize: '1.3rem' }}
+      style={{ fontSize: '1.3rem', padding: '1rem 1.5rem', borderRadius: '2rem' }}
       autoComplete="off"
       spellCheck="false"
       placeholder="For example: EXPENDED"

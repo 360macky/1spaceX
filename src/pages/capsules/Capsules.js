@@ -1,9 +1,14 @@
 import React from 'react';
 
-import MainThead from '../home/MainThead';
-import ResultRow from '../home/ResultRow';
-
 import isEmptyObject from '../../utils/isEmptyObject';
+import getResults from '../../utils/getResults';
+import {
+  ResultsContainer,
+  SearchContainer,
+  SearchInput,
+  SearchButton,
+} from '../../components/Search';
+import CapsuleResult from './CapsuleResult';
 import { SPACEX_API__CAPSULES } from '../../api';
 
 class Capsules extends React.Component {
@@ -44,23 +49,12 @@ class Capsules extends React.Component {
             capsulesFounded: data,
           });
         }
-
-        let details = null;
-        const capsules_founded = data.filter((capsule) => {
-          details = capsule.details;
-          if (details !== null) {
-            let searchRegexp = new RegExp(this.state.search, 'i');
-
-            if (details.search(searchRegexp) !== -1) {
-              return details;
-            }
-          }
-          return false;
-        });
-
+        const capsulesFounded = data.filter((capsule) =>
+          getResults(capsule, 'details', this.state.search)
+        );
         this.setState({
           isLoadingData: false,
-          capsulesFounded: capsules_founded,
+          capsulesFounded,
         });
       });
   }
@@ -69,58 +63,26 @@ class Capsules extends React.Component {
     let results = null;
     if (!isEmptyObject(this.state.capsulesFounded)) {
       results = this.state.capsulesFounded.map((capsule, index) => (
-        <ResultRow
+        <CapsuleResult
           key={index}
-          capsule_id={capsule.capsule_id}
-          details={capsule.details}
-          landings={capsule.landings}
+          id={capsule.capsule_id}
+          lastUpdate={capsule.details}
+          serial={capsule.capsule_serial}
           status={capsule.status}
           type={capsule.type}
+          reuseCount={capsule.reuseCount}
         />
       ));
     }
     return (
-      <div className="cover vh-100">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-12 text-center">
-              <div className="container">
-                <form onSubmit={this.handleSubmit}>
-                  <div className="form-group d-flex flex-column justify-content-center align-items-center">
-                    <input
-                      type="text"
-                      name="search"
-                      value={this.state.search}
-                      onChange={this.handleChange}
-                      className="form-control bg-transparent text-light mt-5 w-50 font-custom"
-                      style={{ fontSize: '1.3rem' }}
-                      autoComplete="off"
-                      spellCheck="false"
-                      placeholder="For example: CRS1"
-                      autoFocus
-                    />
-                    <button
-                      className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
-                      type="submit"
-                      disabled={this.state.search ? false : true}
-                    >
-                      {this.state.isLoadingData === true ? (
-                        <span>Loading...</span>
-                      ) : (
-                        <span>Search capsule</span>
-                      )}
-                    </button>
-                  </div>
-                </form>
-                <table className="table table-responsive table-bordered shadow-sm">
-                  <MainThead results={results} />
-                  {results}
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SearchContainer onSubmit={this.handleSubmit}>
+        <SearchInput value={this.state.search} onChange={this.handleChange} />
+        <SearchButton
+          isLoadingData={this.state.isLoadingData}
+          lookingFor="capsule"
+        />
+        <ResultsContainer>{results}</ResultsContainer>
+      </SearchContainer>
     );
   }
 }
