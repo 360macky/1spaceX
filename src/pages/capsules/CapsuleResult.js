@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CoreResult = ({
-  key,
   id,
   lastUpdate,
   serial,
@@ -11,7 +10,6 @@ const CoreResult = ({
 }) => {
   return (
     <div
-      key={key}
       className="card capsule-card bg-transparent border border-white text-white shadow m-3"
     >
       <div className="card-body">

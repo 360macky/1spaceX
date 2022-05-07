@@ -1,7 +1,6 @@
 import React from 'react';
 
 const LaunchResult = ({
-  key,
   rocket,
   success,
   name,
@@ -9,7 +8,6 @@ const LaunchResult = ({
 }) => {
   return (
     <div
-      key={key}
       className="card capsule-card bg-transparent border border-white text-white shadow m-3"
     >
       <div className="card-body">
