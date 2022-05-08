@@ -16,12 +16,13 @@ function Home() {
             Find SpaceX things.
           </h1>
           <p className="text-white text-center h4">
-            Like capsules or launches...
+            Search platform for SpaceX physical items
           </p>
           <div className="lead text-center homepage__buttons">
             <HomeButton to="/capsules" title="Capsules" />
             <HomeButton to="/cores" title="Cores" />
             <HomeButton to="/launches" title="Launches" />
+            <HomeButton to="/payloads" title="Payloads" />
           </div>
         </div>
       </div>
