@@ -23,6 +23,7 @@ function Home() {
             <HomeButton to="/cores" title="Cores" />
             <HomeButton to="/launches" title="Launches" />
             <HomeButton to="/payloads" title="Payloads" />
+            <HomeButton to="/rockets" title="Rockets" />
           </div>
         </div>
       </div>
