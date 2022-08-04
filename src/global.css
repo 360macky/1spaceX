@@ -21,6 +21,8 @@ body {
 }
 
 .footer-content {
+  display: flex;
+  flex-wrap: wrap;
   padding: 15px 30px;
   border-radius: 50px;
 }
