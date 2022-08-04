@@ -1,10 +1,10 @@
 import React from 'react';
 
-const LaunchResult = ({
-  rocket,
-  success,
+const PayloadResult = ({
   name,
-  details
+  orbit,
+  id,
+  regime
 }) => {
   return (
     <div
@@ -12,18 +12,19 @@ const LaunchResult = ({
     >
       <div className="card-body">
         <h5 className="card-title capsule-title">{name}</h5>
-        <p>{details}</p>
+        <p>Orbit: {orbit}</p>
       </div>
       <ul className="list-group list-group-flush text-white">
         <li className="list-group-item capsule-card__item border border-white text-white">
-          Success: <b>{success.toString().toUpperCase()}</b>
+          Regime: <b>{regime}</b>
         </li>
       </ul>
       <div className="card-footer">
-        <p>Rocket: {rocket.toUpperCase()}</p>
+        <p>ID: {id}</p>
       </div>
     </div>
   );
 };
 
-export default LaunchResult;
+export default PayloadResult;
+

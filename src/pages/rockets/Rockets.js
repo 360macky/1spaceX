@@ -7,18 +7,18 @@ import {
   SearchInput,
   SearchButton,
 } from '../../components/Search';
-import PayloadResult from './PayloadResult';
-import { SPACEX_API__PAYLOADS } from '../../api';
+import RocketResult from './RocketResult';
+import { SPACEX_API__ROCKETS } from '../../api';
 
-class Payloads extends React.Component {
+class Rockets extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       search: '',
-      payloadsFounded: {},
+      rocketsFounded: {},
       isLoadingData: null,
     };
-    this.getPayloads();
+    this.getRockets();
   }
 
   handleChange = (event) => {
@@ -35,39 +35,40 @@ class Payloads extends React.Component {
       isLoadingData: true,
     });
 
-    this.getPayloads();
+    this.getRockets();
   };
 
-  getPayloads(){
-    fetch(SPACEX_API__PAYLOADS)
+  getRockets() {
+    fetch(SPACEX_API__ROCKETS)
       .then((response) => response.json())
       .then((data) => {
         if (this.state.search.length < 0) {
           this.setState({
             isLoadingData: false,
-            payloadsFounded: data,
+            rocketsFounded: data,
           });
         }
-        const payloadsFounded = data.filter((payload) =>
-          getResults(payload, 'name', this.state.search)
+        const rocketsFounded = data.filter((rocket) =>
+          getResults(rocket, 'description', this.state.search)
         );
         this.setState({
           isLoadingData: false,
-          payloadsFounded,
+          rocketsFounded,
         });
       });
   }
 
   render() {
     let results = null;
-    if (!isEmptyObject(this.state.payloadsFounded)) {
-      results = this.state.payloadsFounded.map((payload, index) => (
-        <PayloadResult
+    if (!isEmptyObject(this.state.rocketsFounded)) {
+      results = this.state.rocketsFounded.map((rocket, index) => (
+        <RocketResult
           key={index}
-          name={payload.name}
-          orbit={payload.orbit}
-          regime={payload.regime}
-          id={payload.id}
+          id={rocket.id}
+          name={rocket.name}
+          type={rocket.type}
+          active={rocket.active}
+          description={rocket.description}
         />
       ));
     }
@@ -76,7 +77,7 @@ class Payloads extends React.Component {
         <SearchInput value={this.state.search} onChange={this.handleChange} />
         <SearchButton
           isLoadingData={this.state.isLoadingData}
-          lookingFor="payloads"
+          lookingFor="rockets"
         />
         <ResultsContainer>{results}</ResultsContainer>
       </SearchContainer>
@@ -84,5 +85,4 @@ class Payloads extends React.Component {
   }
 }
 
-export default Payloads;
-
+export default Rockets;

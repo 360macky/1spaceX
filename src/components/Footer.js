@@ -24,16 +24,16 @@ function Footer() {
         to="https://github.com/360macky/1spaceX"
         text="Repository"
       />
-      {/* <FooterLink
+      <FooterLink
         to="https://github.com/360macky/1spaceX/graphs/contributors"
         text="Contributors"
-      /> */}
-      {/* <FooterLink
+      />
+      <FooterLink
         to="https://github.com/360macky/1spaceX/issues"
         text="Issues"
-      /> */}
+      />
       <FooterLink to="https://marceloarias.com" text="@360macky" />
-      {/* <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" /> */}
+      <FooterLink to="https://www.spacex.com/" text="SpaceX Classical" />
       </div>
     </FooterContainer>
   );
