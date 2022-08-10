@@ -38,7 +38,7 @@ class Cores extends React.Component {
     this.getCores();
   };
 
-  getCores(){
+  getCores() {
     fetch(SPACEX_API__CORES)
       .then((response) => response.json())
       .then((data) => {

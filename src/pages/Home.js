@@ -77,7 +77,7 @@ const HomeXLogo = () => {
     <img
       src={SpaceX}
       style={{ width: '400px' }}
-      className="mb-4 spacex-X"
+      className="my-4 spacex-X"
       alt="SpaceX logo"
     />
   );
