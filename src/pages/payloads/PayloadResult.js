@@ -1,15 +1,8 @@
 import React from 'react';
 
-const PayloadResult = ({
-  name,
-  orbit,
-  id,
-  regime
-}) => {
+const PayloadResult = ({ name, orbit, id, regime }) => {
   return (
-    <div
-      className="card capsule-card bg-transparent border border-white text-white shadow m-3"
-    >
+    <div className="card capsule-card bg-transparent border border-white text-white shadow m-3">
       <div className="card-body">
         <h5 className="card-title capsule-title">{name}</h5>
         <p>Orbit: {orbit}</p>
@@ -27,4 +20,3 @@ const PayloadResult = ({
 };
 
 export default PayloadResult;
-

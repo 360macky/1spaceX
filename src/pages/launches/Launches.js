@@ -38,7 +38,7 @@ class Launches extends React.Component {
     this.getCores();
   };
 
-  getCores(){
+  getCores() {
     fetch(SPACEX_API__LAUNCHES)
       .then((response) => response.json())
       .then((data) => {
