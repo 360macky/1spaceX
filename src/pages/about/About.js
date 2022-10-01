@@ -1,46 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class About extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div
-          className="card text-white border-light"
-          style={{ background: 'transparent' }}
-        >
-          <div className="card-body">
-            <h1 className="font-custom">About</h1>
-            <p>
-              <b>1spaceX.com</b> is a web app that I built to learn how to use
-              the SpaceX API, and to experiment with the new features of React.
-            </p>
-            <h2 className="font-custom">Features</h2>
-            <p>
-              <ul>
-                <li>
-                  Physical Component Search: Search engine for capsules, cores
-                  or launches.
-                </li>
-                <li>
-                  Gallery: Latest best images of SpaceX experiments.{' '}
-                  <b>(Coming soon!)</b>
-                </li>
-              </ul>
-            </p>
-            <h2 className="font-custom">Developers</h2>
-            <p>
-              <ul>
-                <li>Marcelo (@360macky)</li>
-                <li>Lewis (@inffinite)</li>
-              </ul>
-            </p>
-            <h2 className="font-custom">License</h2>
-            <p>The source code of this app is under MIT License.</p>
-          </div>
+const About = () => {
+  return (
+    <div className="container-sm">
+      <div
+        className="card text-white border-light"
+        style={{ background: 'transparent' }}
+      >
+        <div className="card-body p-4">
+          <h1 className="font-custom">About 1SpaceX project</h1>
+          <p>
+            <b>1spaceX.com</b> is a web app that I built to learn how to use the
+            SpaceX API, and to experiment with the new features of React.
+          </p>
+          <h2 className="font-custom">Physical Component Search</h2>
+          <p>
+            <ul>
+              <li>Capsules</li>
+              <li>Cores</li>
+              <li>Launches</li>
+              <li>Payloads</li>
+              <li>Rockets</li>
+            </ul>
+          </p>
+          <h2 className="font-custom">Developers</h2>
+          <p>
+            <ul>
+              <li>Marcelo (@360macky)</li>
+              <li>Lewis (@inffinite)</li>
+            </ul>
+          </p>
+          <h2 className="font-custom">License</h2>
+          <p>The source code of this app is under MIT License.</p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default About;
