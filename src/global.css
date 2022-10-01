@@ -10,6 +10,14 @@ body {
   background-color: black !important;
 }
 
+.custom-link {
+  text-decoration: none;
+}
+
+.custom-link:hover {
+  text-decoration: underline !important;
+}
+
 .footer {
   color: white;
   bottom: 0;
