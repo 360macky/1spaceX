@@ -1,5 +1,5 @@
 import React from 'react';
-import SpaceX from './spacex.png';
+import SpaceX from '../images/rocket.svg';
 import { Link } from 'react-router-dom';
 import MacbookPreview from '../images/macbook_preview.webp';
 
@@ -84,7 +84,7 @@ const HomeXLogo = () => {
   return (
     <img
       src={SpaceX}
-      style={{ width: '400px' }}
+      style={{ minHeight: '30vh' }}
       className="my-4 spacex-X"
       alt="SpaceX logo"
     />

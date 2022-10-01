@@ -93,7 +93,7 @@ button[type='submit'] {
     width: 100% !important;
   }
   .spacex-X {
-    width: 200px !important;
+    display: none;
   }
   .spacex-title {
     font-size: 3rem !important;
