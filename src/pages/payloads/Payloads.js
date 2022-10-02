@@ -38,7 +38,7 @@ class Payloads extends React.Component {
     this.getPayloads();
   };
 
-  getPayloads(){
+  getPayloads() {
     fetch(SPACEX_API__PAYLOADS)
       .then((response) => response.json())
       .then((data) => {
@@ -85,4 +85,3 @@ class Payloads extends React.Component {
 }
 
 export default Payloads;
-

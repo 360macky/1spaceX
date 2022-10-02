@@ -25,6 +25,14 @@ function Home() {
             <HomeButton to="/payloads" title="Payloads" />
             <HomeButton to="/rockets" title="Rockets" />
           </div>
+          <div className="d-flex justify-content-center w-100  pt-4">
+            <Link
+              to={'/about'}
+              className="custom-link text-white fs-5 text-center text-decoration-none"
+            >
+              About this website
+            </Link>
+          </div>
         </div>
       </div>
       <div
@@ -77,7 +85,7 @@ const HomeXLogo = () => {
     <img
       src={SpaceX}
       style={{ width: '400px' }}
-      className="mb-4 spacex-X"
+      className="my-4 spacex-X"
       alt="SpaceX logo"
     />
   );

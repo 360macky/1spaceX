@@ -39,7 +39,7 @@ class Capsules extends React.Component {
     this.getCapsules();
   };
 
-  getCapsules(){
+  getCapsules() {
     fetch(SPACEX_API__CAPSULES)
       .then((response) => response.json())
       .then((data) => {
