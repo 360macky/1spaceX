@@ -23,18 +23,22 @@
 <p align="center">
   🤗 Thank you for visiting this space exploration project, help spread it by giving a star 🌟<br />
   <br />
-  <a href="https://github.com/360macky/spacex-search/stargazers"><img src="https://img.shields.io/github/stars/360macky/spacex-search?label=Star%20this%20repository%21&style=social" /></a><br />
+  <a href="https://github.com/360macky/1spaceX/stargazers"><img src="https://img.shields.io/github/stars/360macky/1spaceX?label=Star%20this%20repository%21&style=social" /></a><br />
 </p>
- 
-
 
 
 ![Demo of 1spaceX](./.github/demo.gif)
 
 
+## 🚀 Development
+
+**1spaceX.com** is a web app built with React 18. It uses [Bootstrap](https://getbootstrap.com/) as CSS design library but I also integrate other styles for customization of the web app.
+
+Also, in some components the [`styled-components`](https://www.npmjs.com/package/styled-components) library is used.
+
 ## 📦 Deployment
 
-Once you have the repository **spacex-search**, run this command from the project directory:
+Once you have the repository **1spaceX**, run this command from the project directory:
 
 🔽 Install all dependencies...
 
@@ -112,7 +116,7 @@ Current versions of our dependencies:
 
 
 ## 🤲 Contributing
-Do you would like to contribute? Do you want to be the author of a new feature? Awesome! please fork the repository and make changes as you like. [Pull requests](https://github.com/360macky/spacex-search/pulls) are warmly welcome.
+Do you would like to contribute? Do you want to be the author of a new feature? Awesome! please fork the repository and make changes as you like. [Pull requests](https://github.com/360macky/1spaceX/pulls) are warmly welcome.
 
 
 ## 📃 License
