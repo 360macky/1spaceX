@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CoreResult = ({ id, lastUpdate, serial, status, type, reuseCount }) => {
+const CoreResult = ({ id, lastUpdate, serial, status, type }) => {
   return (
     <div className="card capsule-card bg-transparent border border-white text-white shadow m-3">
       <div className="card-body">
@@ -15,11 +15,6 @@ const CoreResult = ({ id, lastUpdate, serial, status, type, reuseCount }) => {
       <ul className="list-group list-group-flush text-white">
         <li className="list-group-item capsule-card__item border border-white text-white">
           Type: <b>{type.toUpperCase()}</b>
-        </li>
-      </ul>
-      <ul className="list-group list-group-flush text-white">
-        <li className="list-group-item capsule-card__item border border-white text-white">
-          Reuse count: <b>{reuseCount}</b>
         </li>
       </ul>
       <div className="card-footer">

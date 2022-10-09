@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container-sm">
+    <div className="container-sm pt-3">
       <div
         className="card text-white border-light"
         style={{ background: 'transparent' }}
