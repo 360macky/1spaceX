@@ -36,6 +36,9 @@
 
 Also, in some components the [`styled-components`](https://www.npmjs.com/package/styled-components) library is used.
 
+There is a page for each physical component like: capsules, cores, launches, payloads and rockets.
+In each page there is a search bar, and the cards associated to that physical component.
+
 ## 📦 Deployment
 
 Once you have the repository **1spaceX**, run this command from the project directory:
