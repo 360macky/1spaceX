@@ -30,8 +30,6 @@
 
 
 ![Demo of 1spaceX](./.github/demo.gif)
-![Screenshoot Capsules Home 1spaceX](./.github/screenshot_1.PNG)
-![Screenshoot Capsules Results 1spaceX](./.github/screenshot_2.PNG)
 
 
 ## 📦 Deployment
