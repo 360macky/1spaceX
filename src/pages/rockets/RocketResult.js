@@ -5,8 +5,12 @@ const PayloadResult = ({ name, active, description, id }) => {
     <div className="card capsule-card bg-transparent border border-white text-white shadow m-3">
       <div className="card-body">
         <h5 className="card-title capsule-title">{name}</h5>
-        <p>{description}</p>
       </div>
+      <ul className="list-group list-group-flush text-white">
+        <li className="list-group-item capsule-card__item border border-white text-white">
+          <p>{description}</p>
+        </li>
+      </ul>
       <ul className="list-group list-group-flush text-white">
         <li className="list-group-item capsule-card__item border border-white text-white">
           <b>{active ? 'Active' : 'Inactive'}</b>

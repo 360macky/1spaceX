@@ -19,7 +19,7 @@ function Navbar() {
           src={AppLogo}
           alt="1spaceX"
           title="1spaceX"
-          style={{ height: LOGO_HEIGHT }}
+          style={{ height: LOGO_HEIGHT, width: 'auto' }}
         />
         <span role="img" className="ms-3" aria-label="rocket">
           <FontAwesomeIcon icon={faStar} />

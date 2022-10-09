@@ -28,7 +28,7 @@ function Home() {
           <div className="d-flex justify-content-center w-100  pt-4">
             <Link
               to={'/about'}
-              className="custom-link text-white fs-5 text-center text-decoration-none"
+              className="custom-link link-yellow text-yellow fs-5 text-center text-decoration-none"
             >
               About this website
             </Link>
@@ -74,7 +74,7 @@ const HomeButton = ({ title, to }) => {
 
 const HomeSectionTitle = ({ text }) => {
   return (
-    <h2 className="text-white text-center" style={{ marginBottom: '15px' }}>
+    <h2 className="text-center text-yellow" style={{ marginBottom: '4rem' }}>
       {text}
     </h2>
   );
