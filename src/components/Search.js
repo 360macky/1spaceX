@@ -35,7 +35,7 @@ export const SearchInput = ({ value, onChange }) => {
       name="search"
       value={value}
       onChange={onChange}
-      className="form-control bg-transparent text-light mt-5 w-50 font-custom"
+      className="custom-search form-control bg-transparent text-light mt-5 w-50 font-custom"
       style={{
         fontSize: '1.3rem',
         padding: '1rem 1.5rem',
@@ -52,7 +52,7 @@ export const SearchInput = ({ value, onChange }) => {
 export const SearchButton = ({ isLoadingData, lookingFor }) => {
   return (
     <button
-      className="btn btn-light btn-lg mt-3 font-custom shadow-lg"
+      className="custom-button-search btn btn-light btn-lg mt-3 font-custom shadow-lg"
       type="submit"
     >
       {isLoadingData === true ? (

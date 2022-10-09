@@ -10,6 +10,33 @@ body {
   background-color: black !important;
 }
 
+:root {
+  --space-yellow: #BF9658;
+  --space-yellow25: #BF965840;
+}
+
+.text-yellow {
+  color: var(--space-yellow);
+}
+
+.link-yellow:hover {
+  color: var(--space-yellow);
+}
+
+.custom-search:focus {
+  border-color: var(--space-yellow) !important;
+  box-shadow: 0 0 0 0.25rem var(--space-yellow25) !important;
+}
+
+.custom-button-search {
+  background-color: #ffffffe6 !important;
+  border: none !important;
+}
+
+.custom-button-search:hover {
+  background-color: #ffffff !important;
+}
+
 .custom-link {
   text-decoration: none;
 }
@@ -30,9 +57,10 @@ body {
 
 .footer-content {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 15px 30px;
-  border-radius: 50px;
+  padding: 1rem 2rem;
+  border-radius: 3.1rem;
 }
 
 .footer-text {
