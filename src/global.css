@@ -113,6 +113,11 @@ button[type='submit'] {
   border-radius: 5rem;
 }
 
+
+.macbook_preview_image {
+  width: 40%;
+}
+
 @media (max-width: 425px) {
   .cover--home {
     animation: none !important;
@@ -130,9 +135,13 @@ button[type='submit'] {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    row-gap: 1rem;
   }
   .homepage__button {
     margin: 0 !important;
+  }
+  .macbook_preview_image {
+    width: 100%;
   }
 }
 
