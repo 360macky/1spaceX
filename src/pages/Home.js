@@ -12,10 +12,10 @@ function Home() {
       >
         <HomeXLogo />
         <div>
-          <h1 className="display-4 font-custom text-white text-center spacex-title">
+          <h1 className="display-4 font-custom text-white text-center">
             Find SpaceX things.
           </h1>
-          <p className="text-white text-center h4">
+          <p className="text-white text-center h4 px-2">
             Search platform for SpaceX physical items
           </p>
           <div className="lead text-center homepage__buttons">
@@ -25,7 +25,7 @@ function Home() {
             <HomeButton to="/payloads" title="Payloads" />
             <HomeButton to="/rockets" title="Rockets" />
           </div>
-          <div className="d-flex justify-content-center w-100  pt-4">
+          <div className="d-flex justify-content-center w-100 pt-4">
             <Link
               to={'/about'}
               className="custom-link link-yellow text-yellow fs-5 text-center text-decoration-none"
@@ -41,12 +41,9 @@ function Home() {
       >
         <HomeSectionTitle text="Are you ready for lift off?" />
         <div className="d-flex flex-row justify-content-center align-items-center text-white flex-wrap">
-          <img
-            src={MacbookPreview}
-            style={{ width: '35%', padding: '5px', borderRadius: '25px' }}
-          />
-          <div style={{ marginLeft: '15px' }}>
-            <h3>How it works?</h3>
+          <img src={MacbookPreview} className="macbook_preview_image" />
+          <div className="px-4 pt-2">
+            <h3 className="mb-4">How it works?</h3>
             <p>1. Click on your space exploration component.</p>
             <p>
               2. Enter the search or keyword of the component <br />
@@ -64,7 +61,7 @@ const HomeButton = ({ title, to }) => {
   return (
     <Link
       to={to}
-      className="homepage__button btn btn-outline-light btn-lg mt-3 font-custom shadow-lg mx-1"
+      className="homepage__button btn btn-outline-light btn-lg font-custom shadow-lg mx-1"
       title={title}
     >
       {title}
@@ -73,11 +70,7 @@ const HomeButton = ({ title, to }) => {
 };
 
 const HomeSectionTitle = ({ text }) => {
-  return (
-    <h2 className="text-center text-yellow" style={{ marginBottom: '4rem' }}>
-      {text}
-    </h2>
-  );
+  return <h2 className="text-center text-yellow px-3 mb-4">{text}</h2>;
 };
 
 const HomeXLogo = () => {
