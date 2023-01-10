@@ -2,7 +2,10 @@ import React from 'react';
 
 const CoreResult = ({ id, lastUpdate, serial, status, type }) => {
   return (
-    <div className="card capsule-card bg-transparent border border-white text-white shadow m-3">
+    <div
+      className="card capsule-card bg-transparent border border-white text-white shadow m-3"
+      role={'listitem'}
+    >
       <div className="card-body">
         <h5 className="card-title capsule-title">{serial}</h5>
         <p>{lastUpdate}</p>
