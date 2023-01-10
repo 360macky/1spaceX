@@ -73,11 +73,13 @@ class Launches extends React.Component {
     }
     return (
       <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="launches"
-        />
+        <div className="search-container">
+          <SearchInput value={this.state.search} onChange={this.handleChange} />
+          <SearchButton
+            isLoadingData={this.state.isLoadingData}
+            lookingFor="launches"
+          />
+        </div>
         <ResultsContainer>{results}</ResultsContainer>
       </SearchContainer>
     );

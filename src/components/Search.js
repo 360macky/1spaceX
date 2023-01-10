@@ -30,35 +30,36 @@ export const ResultsContainer = ({ children }) => {
 
 export const SearchInput = ({ value, onChange }) => {
   return (
-    <input
-      type="text"
-      name="search"
-      value={value}
-      onChange={onChange}
-      className="custom-search form-control bg-transparent text-light mt-5 w-50 font-custom"
-      style={{
-        fontSize: '1.3rem',
-        padding: '1rem 1.5rem',
-        borderRadius: '2rem',
-      }}
-      autoComplete="off"
-      spellCheck="false"
-      placeholder="For example: EXPENDED"
-      autoFocus
-    />
+    <>
+      <label htmlFor="search_input" className="custom-label-search mt-5">
+        Search term
+      </label>
+      <input
+        id="search_input"
+        type="text"
+        name="search"
+        value={value}
+        onChange={onChange}
+        className="custom-search form-control bg-transparent text-light w-50 font-custom"
+        autoComplete="off"
+        spellCheck="false"
+        placeholder="For example: EXPENDED"
+        autoFocus
+      />
+    </>
   );
 };
 
-export const SearchButton = ({ isLoadingData, lookingFor }) => {
+export const SearchButton = ({ isLoadingData }) => {
   return (
     <button
-      className="custom-button-search btn btn-light btn-lg mt-3 font-custom shadow-lg"
+      className="custom-button-search btn btn-light btn-lg font-custom shadow-lg"
       type="submit"
     >
       {isLoadingData === true ? (
         <span>Loading...</span>
       ) : (
-        <span>Search {lookingFor}</span>
+        <span>Search</span>
       )}
     </button>
   );

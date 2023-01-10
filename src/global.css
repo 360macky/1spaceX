@@ -31,6 +31,27 @@ body {
   color: var(--space-yellow);
 }
 
+.search-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  padding-top: 3rem;
+}
+
+.custom-label-search {
+  color: white;
+  display: none;
+}
+
+.custom-search {
+  font-size: 1.2rem !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 2rem !important;
+}
+
 .custom-search:focus {
   border-color: var(--space-yellow) !important;
   box-shadow: 0 0 0 0.25rem var(--space-yellow25) !important;

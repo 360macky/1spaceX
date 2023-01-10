@@ -76,11 +76,13 @@ class Capsules extends React.Component {
     }
     return (
       <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="capsule"
-        />
+        <div className="search-container">
+          <SearchInput value={this.state.search} onChange={this.handleChange} />
+          <SearchButton
+            isLoadingData={this.state.isLoadingData}
+            lookingFor="capsule"
+          />
+        </div>
         <ResultsContainer>{results}</ResultsContainer>
       </SearchContainer>
     );

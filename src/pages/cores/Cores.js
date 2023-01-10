@@ -74,11 +74,13 @@ class Cores extends React.Component {
     }
     return (
       <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="core"
-        />
+        <div className="search-container">
+          <SearchInput value={this.state.search} onChange={this.handleChange} />
+          <SearchButton
+            isLoadingData={this.state.isLoadingData}
+            lookingFor="core"
+          />
+        </div>
         <ResultsContainer>{results}</ResultsContainer>
       </SearchContainer>
     );
