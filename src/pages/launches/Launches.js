@@ -1,6 +1,5 @@
-import React from 'react';
-import isEmptyObject from '../../utils/isEmptyObject';
-import getResults from '../../utils/getResults';
+import React, { useState, useEffect } from 'react';
+
 import {
   ResultsContainer,
   SearchContainer,
@@ -10,80 +9,59 @@ import {
 import LaunchResult from './LaunchResult';
 import { SPACEX_API__LAUNCHES } from '../../api';
 
-class Launches extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      launchesFounded: {},
-      isLoadingData: null,
-    };
-    this.getCores();
-  }
+const Launches = () => {
+  const [search, setSearch] = useState('');
+  const [launchesFounded, setLaunchesFounded] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(null);
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearch(value);
   };
 
-  handleSubmit = (event) => {
+  const updateData = async () => {
+    const response = await fetch(SPACEX_API__LAUNCHES);
+    const data = await response.json();
+    const filteredData = data.filter((launch) => {
+      if (launch.details !== null) {
+        return launch.details.toLowerCase().includes(search.toLowerCase());
+      }
+      return false;
+    });
+
+    setLaunchesFounded(filteredData);
+  };
+
+  useEffect(() => {
+    updateData();
+    return () => {};
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    this.setState({
-      isLoadingData: true,
-    });
-
-    this.getCores();
+    setIsLoadingData(true);
+    await updateData();
+    setIsLoadingData(false);
   };
-
-  getCores() {
-    fetch(SPACEX_API__LAUNCHES)
-      .then((response) => response.json())
-      .then((data) => {
-        if (this.state.search.length < 0) {
-          this.setState({
-            isLoadingData: false,
-            launchesFounded: data,
-          });
-        }
-        const launchesFounded = data.filter((launch) =>
-          getResults(launch, 'details', this.state.search)
-        );
-        this.setState({
-          isLoadingData: false,
-          launchesFounded,
-        });
-      });
-  }
-
-  render() {
-    let results = null;
-    if (!isEmptyObject(this.state.launchesFounded)) {
-      results = this.state.launchesFounded.map((launch, index) => (
-        <LaunchResult
-          key={index}
-          name={launch.name}
-          details={launch.details}
-          rocket={launch.rocket}
-          success={launch.success}
-        />
-      ));
-    }
-    return (
-      <SearchContainer onSubmit={this.handleSubmit}>
-        <div className="search-container">
-          <SearchInput value={this.state.search} onChange={this.handleChange} />
-          <SearchButton
-            isLoadingData={this.state.isLoadingData}
-            lookingFor="launches"
+  return (
+    <SearchContainer onSubmit={handleSubmit}>
+      <div className="search-container">
+        <SearchInput value={search} onChange={handleChange} />
+        <SearchButton isLoadingData={isLoadingData} />
+      </div>
+      <ResultsContainer>
+        {launchesFounded.map((launch, index) => (
+          <LaunchResult
+            key={index}
+            name={launch.name}
+            details={launch.details}
+            rocket={launch.rocket}
+            success={launch.success}
           />
-        </div>
-        <ResultsContainer>{results}</ResultsContainer>
-      </SearchContainer>
-    );
-  }
-}
+        ))}
+      </ResultsContainer>
+    </SearchContainer>
+  );
+};
 
 export default Launches;

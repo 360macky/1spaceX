@@ -1,6 +1,5 @@
-import React from 'react';
-import isEmptyObject from '../../utils/isEmptyObject';
-import getResults from '../../utils/getResults';
+import React, { useState, useEffect } from 'react';
+
 import {
   ResultsContainer,
   SearchContainer,
@@ -10,80 +9,59 @@ import {
 import PayloadResult from './PayloadResult';
 import { SPACEX_API__PAYLOADS } from '../../api';
 
-class Payloads extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      payloadsFounded: {},
-      isLoadingData: null,
-    };
-    this.getPayloads();
-  }
+const Payloads = () => {
+  const [search, setSearch] = useState('');
+  const [payloadsFounded, setPayloadsFounded] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(null);
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearch(value);
   };
 
-  handleSubmit = (event) => {
+  const updateData = async () => {
+    const response = await fetch(SPACEX_API__PAYLOADS);
+    const data = await response.json();
+    const filteredData = data.filter((payload) => {
+      if (payload.name !== null) {
+        return payload.name.toLowerCase().includes(search.toLowerCase());
+      }
+      return false;
+    });
+
+    setPayloadsFounded(filteredData);
+  };
+
+  useEffect(() => {
+    updateData();
+    return () => {};
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    this.setState({
-      isLoadingData: true,
-    });
-
-    this.getPayloads();
+    setIsLoadingData(true);
+    await updateData();
+    setIsLoadingData(false);
   };
-
-  getPayloads() {
-    fetch(SPACEX_API__PAYLOADS)
-      .then((response) => response.json())
-      .then((data) => {
-        if (this.state.search.length < 0) {
-          this.setState({
-            isLoadingData: false,
-            payloadsFounded: data,
-          });
-        }
-        const payloadsFounded = data.filter((payload) =>
-          getResults(payload, 'name', this.state.search)
-        );
-        this.setState({
-          isLoadingData: false,
-          payloadsFounded,
-        });
-      });
-  }
-
-  render() {
-    let results = null;
-    if (!isEmptyObject(this.state.payloadsFounded)) {
-      results = this.state.payloadsFounded.map((payload, index) => (
-        <PayloadResult
-          key={index}
-          name={payload.name}
-          orbit={payload.orbit}
-          regime={payload.regime}
-          id={payload.id}
-        />
-      ));
-    }
-    return (
-      <SearchContainer onSubmit={this.handleSubmit}>
-        <div className="search-container">
-          <SearchInput value={this.state.search} onChange={this.handleChange} />
-          <SearchButton
-            isLoadingData={this.state.isLoadingData}
-            lookingFor="payloads"
+  return (
+    <SearchContainer onSubmit={handleSubmit}>
+      <div className="search-container">
+        <SearchInput value={search} onChange={handleChange} />
+        <SearchButton isLoadingData={isLoadingData} />
+      </div>
+      <ResultsContainer>
+        {payloadsFounded.map((payload, index) => (
+          <PayloadResult
+            key={index}
+            name={payload.name}
+            orbit={payload.orbit}
+            regime={payload.regime}
+            id={payload.id}
           />
-        </div>
-        <ResultsContainer>{results}</ResultsContainer>
-      </SearchContainer>
-    );
-  }
-}
+        ))}
+      </ResultsContainer>
+    </SearchContainer>
+  );
+};
 
 export default Payloads;

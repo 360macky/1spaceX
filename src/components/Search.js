@@ -22,7 +22,10 @@ export const SearchContainer = ({ children, onSubmit }) => {
 
 export const ResultsContainer = ({ children }) => {
   return (
-    <div className="d-flex flex-wrap justify-content-center align-items-start m-3">
+    <div
+      className="d-flex flex-wrap justify-content-center align-items-start m-3"
+      role={'list'}
+    >
       {children}
     </div>
   );
@@ -43,7 +46,7 @@ export const SearchInput = ({ value, onChange }) => {
         className="custom-search form-control bg-transparent text-light w-50 font-custom"
         autoComplete="off"
         spellCheck="false"
-        placeholder="For example: EXPENDED"
+        placeholder="Type your search term"
         autoFocus
       />
     </>
@@ -56,11 +59,7 @@ export const SearchButton = ({ isLoadingData }) => {
       className="custom-button-search btn btn-light btn-lg font-custom shadow-lg"
       type="submit"
     >
-      {isLoadingData === true ? (
-        <span>Loading...</span>
-      ) : (
-        <span>Search</span>
-      )}
+      {isLoadingData === true ? <span>Loading...</span> : <span>Search</span>}
     </button>
   );
 };
