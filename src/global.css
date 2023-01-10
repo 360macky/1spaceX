@@ -13,6 +13,16 @@ body {
   --space-yellow25: #bf965840;
 }
 
+.description-text {
+  letter-spacing: 0.4rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
 .text-yellow {
   color: var(--space-yellow);
 }
@@ -110,7 +120,6 @@ button[type='submit'] {
   padding: 0.5rem 2rem;
   border-radius: 5rem;
 }
-
 
 .macbook_preview_image {
   width: 40%;
