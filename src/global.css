@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -92,7 +90,7 @@ code {
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 1)
     ),
-    url('https://i.imgur.com/W4xrRfR.jpg');
+    url('../src/images/rocket-background.webp');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   animation: spaceTransition 24s ease-out infinite;

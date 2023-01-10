@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
-import Footer from '../components/Footer';
-
 import Capsules from '../pages/capsules/Capsules';
 import Cores from '../pages/cores/Cores';
 import Launches from '../pages/launches/Launches';
 import Payloads from '../pages/payloads/Payloads';
 import Rockets from '../pages/rockets/Rockets';
 import About from '../pages/about/About';
+
+const Navbar = lazy(() => import('../components/Navbar'));
+const Footer = lazy(() => import('../components/Footer'));
 
 function App() {
   return (
