@@ -29,17 +29,6 @@
 
 ![Demo of 1spaceX](./.github/demo.gif)
 
-# Case study
-
-1SpaceX is a web app that allows you to find information about SpaceX physical components like: capsules, cores, launches, payloads and rockets.
-
-1SpaceX has more than 90/100 of score in Google LightHouse audit for Performance, Accessibility, Best Practices and SEO.
-
-I designed the animations and the UI/UX of the app. I also made the integration with the SpaceX API.
-
-One of the challenges was to make the app load faster. Google LightHouse audit showed that the app was scoring 89 in Performance. I decided to make various optimizations to improve the performance of the app: Remove unused CSS, use Webp images, and load Google Fonts asynchronously. I made a video to show the difference between the first load and the second load of the app available in my LinkedIn profile.
-
-Another challenge was to update the old React structure to the new React 18 structure. Because this was a project with +3 years of development, I had to update the React structure to the new one. Removing class components and using functional components with hooks.
 
 ## 🚀 Development
 
