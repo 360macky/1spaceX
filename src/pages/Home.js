@@ -63,6 +63,8 @@ const HomeButton = ({ title, to }) => {
       to={to}
       className="homepage__button btn btn-outline-light btn-lg font-custom shadow-lg mx-1"
       title={title}
+      alt={title}
+      role={'button'}
     >
       {title}
     </Link>
