@@ -25,7 +25,7 @@ const Capsules = () => {
     const data = await response.json();
     setCapsulesFounded(data);
     setCapsulesFiltered(data);
-  }
+  };
 
   const updateData = async () => {
     const filteredData = capsulesFounded.filter((capsule) => {
