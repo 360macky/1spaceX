@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,12 +13,43 @@ body {
   --space-yellow25: #bf965840;
 }
 
+.description-text {
+  letter-spacing: 0.4rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
 .text-yellow {
   color: var(--space-yellow);
 }
 
 .link-yellow:hover {
   color: var(--space-yellow);
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  padding-top: 3rem;
+}
+
+.custom-label-search {
+  color: white;
+  display: none;
+}
+
+.custom-search {
+  font-size: 1.2rem !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 2rem !important;
 }
 
 .custom-search:focus {
@@ -92,7 +121,7 @@ code {
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 1)
     ),
-    url('https://i.imgur.com/W4xrRfR.jpg');
+    url('../src/images/rocket-background.webp');
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   animation: spaceTransition 24s ease-out infinite;
@@ -112,7 +141,6 @@ button[type='submit'] {
   padding: 0.5rem 2rem;
   border-radius: 5rem;
 }
-
 
 .macbook_preview_image {
   width: 40%;

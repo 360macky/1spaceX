@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import isEmptyObject from '../../utils/isEmptyObject';
-import getResults from '../../utils/getResults';
 import {
   ResultsContainer,
   SearchContainer,
@@ -11,80 +9,61 @@ import {
 import CapsuleResult from './CapsuleResult';
 import { SPACEX_API__CAPSULES } from '../../api';
 
-class Capsules extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      capsulesFounded: {},
-      isLoadingData: null,
-    };
-    this.getCapsules();
-  }
+const Capsules = () => {
+  const [search, setSearch] = useState('');
+  const [capsulesFounded, setCapsulesFounded] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(null);
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearch(value);
   };
 
-  handleSubmit = (event) => {
+  const updateData = async () => {
+    const response = await fetch(SPACEX_API__CAPSULES);
+    const data = await response.json();
+    const filteredData = data.filter((capsule) => {
+      if (capsule.details !== null) {
+        return capsule.details.toLowerCase().includes(search.toLowerCase());
+      }
+      return false;
+    });
+
+    setCapsulesFounded(filteredData);
+  };
+
+  useEffect(() => {
+    updateData();
+    return () => {};
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    this.setState({
-      isLoadingData: true,
-    });
-
-    this.getCapsules();
+    setIsLoadingData(true);
+    await updateData();
+    setIsLoadingData(false);
   };
-
-  getCapsules() {
-    fetch(SPACEX_API__CAPSULES)
-      .then((response) => response.json())
-      .then((data) => {
-        if (this.state.search.length < 0) {
-          this.setState({
-            isLoadingData: false,
-            capsulesFounded: data,
-          });
-        }
-        const capsulesFounded = data.filter((capsule) =>
-          getResults(capsule, 'details', this.state.search)
-        );
-        this.setState({
-          isLoadingData: false,
-          capsulesFounded,
-        });
-      });
-  }
-
-  render() {
-    let results = null;
-    if (!isEmptyObject(this.state.capsulesFounded)) {
-      results = this.state.capsulesFounded.map((capsule, index) => (
-        <CapsuleResult
-          key={index}
-          id={capsule.capsule_id}
-          lastUpdate={capsule.details}
-          serial={capsule.capsule_serial}
-          status={capsule.status}
-          type={capsule.type}
-          reuseCount={capsule.reuseCount}
-        />
-      ));
-    }
-    return (
-      <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="capsule"
-        />
-        <ResultsContainer>{results}</ResultsContainer>
-      </SearchContainer>
-    );
-  }
-}
+  return (
+    <SearchContainer onSubmit={handleSubmit}>
+      <div className="search-container">
+        <SearchInput value={search} onChange={handleChange} />
+        <SearchButton isLoadingData={isLoadingData} />
+      </div>
+      <ResultsContainer>
+        {capsulesFounded.map((capsule, index) => (
+          <CapsuleResult
+            key={index}
+            id={capsule.capsule_id}
+            lastUpdate={capsule.details}
+            serial={capsule.capsule_serial}
+            status={capsule.status}
+            type={capsule.type}
+            reuseCount={capsule.reuseCount}
+          />
+        ))}
+      </ResultsContainer>
+    </SearchContainer>
+  );
+};
 
 export default Capsules;

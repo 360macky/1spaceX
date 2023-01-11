@@ -1,6 +1,5 @@
-import React from 'react';
-import isEmptyObject from '../../utils/isEmptyObject';
-import getResults from '../../utils/getResults';
+import React, { useState, useEffect } from 'react';
+
 import {
   ResultsContainer,
   SearchContainer,
@@ -10,79 +9,60 @@ import {
 import RocketResult from './RocketResult';
 import { SPACEX_API__ROCKETS } from '../../api';
 
-class Rockets extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      rocketsFounded: {},
-      isLoadingData: null,
-    };
-    this.getRockets();
-  }
+const Rockets = () => {
+  const [search, setSearch] = useState('');
+  const [rocketsFounded, setRocketsFounded] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(null);
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearch(value);
   };
 
-  handleSubmit = (event) => {
+  const updateData = async () => {
+    const response = await fetch(SPACEX_API__ROCKETS);
+    const data = await response.json();
+    const filteredData = data.filter((rocket) => {
+      if (rocket.name !== null) {
+        return rocket.description.toLowerCase().includes(search.toLowerCase());
+      }
+      return false;
+    });
+
+    setRocketsFounded(filteredData);
+  };
+
+  useEffect(() => {
+    updateData();
+    return () => {};
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    this.setState({
-      isLoadingData: true,
-    });
-
-    this.getRockets();
+    setIsLoadingData(true);
+    await updateData();
+    setIsLoadingData(false);
   };
-
-  getRockets() {
-    fetch(SPACEX_API__ROCKETS)
-      .then((response) => response.json())
-      .then((data) => {
-        if (this.state.search.length < 0) {
-          this.setState({
-            isLoadingData: false,
-            rocketsFounded: data,
-          });
-        }
-        const rocketsFounded = data.filter((rocket) =>
-          getResults(rocket, 'description', this.state.search)
-        );
-        this.setState({
-          isLoadingData: false,
-          rocketsFounded,
-        });
-      });
-  }
-
-  render() {
-    let results = null;
-    if (!isEmptyObject(this.state.rocketsFounded)) {
-      results = this.state.rocketsFounded.map((rocket, index) => (
-        <RocketResult
-          key={index}
-          id={rocket.id}
-          name={rocket.name}
-          type={rocket.type}
-          active={rocket.active}
-          description={rocket.description}
-        />
-      ));
-    }
-    return (
-      <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="rockets"
-        />
-        <ResultsContainer>{results}</ResultsContainer>
-      </SearchContainer>
-    );
-  }
-}
+  return (
+    <SearchContainer onSubmit={handleSubmit}>
+      <div className="search-container">
+        <SearchInput value={search} onChange={handleChange} />
+        <SearchButton isLoadingData={isLoadingData} />
+      </div>
+      <ResultsContainer>
+        {rocketsFounded.map((rocket, index) => (
+          <RocketResult
+            key={index}
+            id={rocket.id}
+            name={rocket.name}
+            type={rocket.type}
+            active={rocket.active}
+            description={rocket.description}
+          />
+        ))}
+      </ResultsContainer>
+    </SearchContainer>
+  );
+};
 
 export default Rockets;

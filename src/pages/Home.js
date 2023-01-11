@@ -11,14 +11,17 @@ function Home() {
         style={{ minHeight: '90vh' }}
       >
         <HomeXLogo />
-        <div>
+        <div className="hero">
           <h1 className="display-4 font-custom text-white text-center">
             Find SpaceX things.
           </h1>
-          <p className="text-white text-center h4 px-2">
+          <p className="text-white text-center h4 px-2 text-uppercase description-text">
             Search platform for SpaceX physical items
           </p>
-          <div className="lead text-center homepage__buttons">
+          <div
+            className="lead text-center homepage__buttons"
+            role={'navigation'}
+          >
             <HomeButton to="/capsules" title="Capsules" />
             <HomeButton to="/cores" title="Cores" />
             <HomeButton to="/launches" title="Launches" />
@@ -63,6 +66,8 @@ const HomeButton = ({ title, to }) => {
       to={to}
       className="homepage__button btn btn-outline-light btn-lg font-custom shadow-lg mx-1"
       title={title}
+      alt={title}
+      role={'button'}
     >
       {title}
     </Link>

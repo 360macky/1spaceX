@@ -1,6 +1,5 @@
-import React from 'react';
-import isEmptyObject from '../../utils/isEmptyObject';
-import getResults from '../../utils/getResults';
+import React, { useState, useEffect } from 'react';
+
 import {
   ResultsContainer,
   SearchContainer,
@@ -10,79 +9,60 @@ import {
 import CoreResult from './CoreResult';
 import { SPACEX_API__CORES } from '../../api';
 
-class Cores extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      coresFounded: {},
-      isLoadingData: null,
-    };
-    this.getCores();
-  }
+const Cores = () => {
+  const [search, setSearch] = useState('');
+  const [coresFounded, setCoresFounded] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(null);
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
+  const handleChange = (event) => {
+    const { value } = event.target;
+    setSearch(value);
   };
 
-  handleSubmit = (event) => {
+  const updateData = async () => {
+    const response = await fetch(SPACEX_API__CORES);
+    const data = await response.json();
+    const filteredData = data.filter((core) => {
+      if (core.last_update !== null) {
+        return core.last_update.toLowerCase().includes(search.toLowerCase());
+      }
+      return false;
+    });
+
+    setCoresFounded(filteredData);
+  };
+
+  useEffect(() => {
+    updateData();
+    return () => {};
+  }, []);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    this.setState({
-      isLoadingData: true,
-    });
-
-    this.getCores();
+    setIsLoadingData(true);
+    await updateData();
+    setIsLoadingData(false);
   };
-
-  getCores() {
-    fetch(SPACEX_API__CORES)
-      .then((response) => response.json())
-      .then((data) => {
-        if (this.state.search.length < 0) {
-          this.setState({
-            isLoadingData: false,
-            coresFounded: data,
-          });
-        }
-        const coresFounded = data.filter((core) =>
-          getResults(core, 'last_update', this.state.search)
-        );
-        this.setState({
-          isLoadingData: false,
-          coresFounded,
-        });
-      });
-  }
-
-  render() {
-    let results = null;
-    if (!isEmptyObject(this.state.coresFounded)) {
-      results = this.state.coresFounded.map((core, index) => (
-        <CoreResult
-          key={index}
-          id={core.id}
-          serial={core.serial}
-          lastUpdate={core.last_update}
-          status={core.status}
-          reuseCount={core.reuse_count}
-        />
-      ));
-    }
-    return (
-      <SearchContainer onSubmit={this.handleSubmit}>
-        <SearchInput value={this.state.search} onChange={this.handleChange} />
-        <SearchButton
-          isLoadingData={this.state.isLoadingData}
-          lookingFor="core"
-        />
-        <ResultsContainer>{results}</ResultsContainer>
-      </SearchContainer>
-    );
-  }
-}
+  return (
+    <SearchContainer onSubmit={handleSubmit}>
+      <div className="search-container">
+        <SearchInput value={search} onChange={handleChange} />
+        <SearchButton isLoadingData={isLoadingData} />
+      </div>
+      <ResultsContainer>
+        {coresFounded.map((core, index) => (
+          <CoreResult
+            key={index}
+            id={core.id}
+            serial={core.serial}
+            lastUpdate={core.last_update}
+            status={core.status}
+            reuseCount={core.reuse_count}
+          />
+        ))}
+      </ResultsContainer>
+    </SearchContainer>
+  );
+};
 
 export default Cores;
