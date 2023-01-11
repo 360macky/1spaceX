@@ -12,6 +12,7 @@ import { SPACEX_API__PAYLOADS } from '../../api';
 const Payloads = () => {
   const [search, setSearch] = useState('');
   const [payloadsFounded, setPayloadsFounded] = useState([]);
+  const [payloadsFiltered, setPayloadsFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
@@ -19,21 +20,26 @@ const Payloads = () => {
     setSearch(value);
   };
 
-  const updateData = async () => {
+  const getData = async () => {
     const response = await fetch(SPACEX_API__PAYLOADS);
     const data = await response.json();
-    const filteredData = data.filter((payload) => {
+    setPayloadsFounded(data);
+    setPayloadsFiltered(data);
+  };
+
+  const updateData = async () => {
+    const filteredData = payloadsFounded.filter((payload) => {
       if (payload.name !== null) {
         return payload.name.toLowerCase().includes(search.toLowerCase());
       }
       return false;
     });
 
-    setPayloadsFounded(filteredData);
+    setPayloadsFiltered(filteredData);
   };
 
   useEffect(() => {
-    updateData();
+    getData();
     return () => {};
   }, []);
 
@@ -50,7 +56,7 @@ const Payloads = () => {
         <SearchButton isLoadingData={isLoadingData} />
       </div>
       <ResultsContainer>
-        {payloadsFounded.map((payload, index) => (
+        {payloadsFiltered.map((payload, index) => (
           <PayloadResult
             key={index}
             name={payload.name}

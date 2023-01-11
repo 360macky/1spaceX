@@ -12,6 +12,7 @@ import { SPACEX_API__CAPSULES } from '../../api';
 const Capsules = () => {
   const [search, setSearch] = useState('');
   const [capsulesFounded, setCapsulesFounded] = useState([]);
+  const [capsulesFiltered, setCapsulesFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
@@ -19,21 +20,26 @@ const Capsules = () => {
     setSearch(value);
   };
 
-  const updateData = async () => {
+  const getData = async () => {
     const response = await fetch(SPACEX_API__CAPSULES);
     const data = await response.json();
-    const filteredData = data.filter((capsule) => {
+    setCapsulesFounded(data);
+    setCapsulesFiltered(data);
+  }
+
+  const updateData = async () => {
+    const filteredData = capsulesFounded.filter((capsule) => {
       if (capsule.details !== null) {
         return capsule.details.toLowerCase().includes(search.toLowerCase());
       }
       return false;
     });
 
-    setCapsulesFounded(filteredData);
+    setCapsulesFiltered(filteredData);
   };
 
   useEffect(() => {
-    updateData();
+    getData();
     return () => {};
   }, []);
 
@@ -50,7 +56,7 @@ const Capsules = () => {
         <SearchButton isLoadingData={isLoadingData} />
       </div>
       <ResultsContainer>
-        {capsulesFounded.map((capsule, index) => (
+        {capsulesFiltered.map((capsule, index) => (
           <CapsuleResult
             key={index}
             id={capsule.capsule_id}

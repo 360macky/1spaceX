@@ -12,6 +12,7 @@ import { SPACEX_API__LAUNCHES } from '../../api';
 const Launches = () => {
   const [search, setSearch] = useState('');
   const [launchesFounded, setLaunchesFounded] = useState([]);
+  const [launchesFiltered, setLaunchesFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
@@ -19,21 +20,26 @@ const Launches = () => {
     setSearch(value);
   };
 
-  const updateData = async () => {
+  const getData = async () => {
     const response = await fetch(SPACEX_API__LAUNCHES);
     const data = await response.json();
-    const filteredData = data.filter((launch) => {
+    setLaunchesFounded(data);
+    setLaunchesFiltered(data);
+  };
+
+  const updateData = async () => {
+    const filteredData = launchesFounded.filter((launch) => {
       if (launch.details !== null) {
         return launch.details.toLowerCase().includes(search.toLowerCase());
       }
       return false;
     });
 
-    setLaunchesFounded(filteredData);
+    setLaunchesFiltered(filteredData);
   };
 
   useEffect(() => {
-    updateData();
+    getData();
     return () => {};
   }, []);
 
@@ -50,7 +56,7 @@ const Launches = () => {
         <SearchButton isLoadingData={isLoadingData} />
       </div>
       <ResultsContainer>
-        {launchesFounded.map((launch, index) => (
+        {launchesFiltered.map((launch, index) => (
           <LaunchResult
             key={index}
             name={launch.name}
