@@ -9,7 +9,7 @@ const LaunchResult = ({ rocket, success, name, details }) => {
       </div>
       <ul className="list-group list-group-flush text-white">
         <li className="list-group-item capsule-card__item border border-white text-white">
-          Success: <b>{success.toString().toUpperCase()}</b>
+          Success: <b>{success ? "YES" : "NO"}</b>
         </li>
       </ul>
       <div className="card-footer">
