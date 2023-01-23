@@ -8,23 +8,20 @@ import {
 } from '../../components/Search';
 import PayloadResult from './PayloadResult';
 import { SPACEX_API__PAYLOADS } from '../../api';
+import useComponentData from '../../hooks/useComponentData';
 
 const Payloads = () => {
   const [search, setSearch] = useState('');
-  const [payloadsFounded, setPayloadsFounded] = useState([]);
+  const payloadsFounded = useComponentData({
+    item: 'payloads',
+    api: SPACEX_API__PAYLOADS,
+  });
   const [payloadsFiltered, setPayloadsFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-  };
-
-  const getData = async () => {
-    const response = await fetch(SPACEX_API__PAYLOADS);
-    const data = await response.json();
-    setPayloadsFounded(data);
-    setPayloadsFiltered(data);
   };
 
   const updateData = async () => {
@@ -39,9 +36,11 @@ const Payloads = () => {
   };
 
   useEffect(() => {
-    getData();
+    if (payloadsFounded) {
+      setPayloadsFiltered(payloadsFounded);
+    }
     return () => {};
-  }, []);
+  }, [payloadsFounded]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

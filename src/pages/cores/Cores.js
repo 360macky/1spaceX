@@ -8,23 +8,20 @@ import {
 } from '../../components/Search';
 import CoreResult from './CoreResult';
 import { SPACEX_API__CORES } from '../../api';
+import useComponentData from '../../hooks/useComponentData';
 
 const Cores = () => {
   const [search, setSearch] = useState('');
-  const [coresFounded, setCoresFounded] = useState([]);
+  const coresFounded = useComponentData({
+    item: 'cores',
+    api: SPACEX_API__CORES,
+  });
   const [coresFiltered, setCoresFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-  };
-
-  const getData = async () => {
-    const response = await fetch(SPACEX_API__CORES);
-    const data = await response.json();
-    setCoresFounded(data);
-    setCoresFiltered(data);
   };
 
   const updateData = async () => {
@@ -39,9 +36,11 @@ const Cores = () => {
   };
 
   useEffect(() => {
-    getData();
+    if (coresFounded) {
+      setCoresFiltered(coresFounded);
+    }
     return () => {};
-  }, []);
+  }, [coresFounded]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

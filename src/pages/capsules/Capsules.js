@@ -8,23 +8,20 @@ import {
 } from '../../components/Search';
 import CapsuleResult from './CapsuleResult';
 import { SPACEX_API__CAPSULES } from '../../api';
+import useComponentData from '../../hooks/useComponentData';
 
 const Capsules = () => {
   const [search, setSearch] = useState('');
-  const [capsulesFounded, setCapsulesFounded] = useState([]);
+  const capsulesFounded = useComponentData({
+    item: 'capsules',
+    api: SPACEX_API__CAPSULES,
+  });
   const [capsulesFiltered, setCapsulesFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-  };
-
-  const getData = async () => {
-    const response = await fetch(SPACEX_API__CAPSULES);
-    const data = await response.json();
-    setCapsulesFounded(data);
-    setCapsulesFiltered(data);
   };
 
   const updateData = async () => {
@@ -39,9 +36,11 @@ const Capsules = () => {
   };
 
   useEffect(() => {
-    getData();
+    if (capsulesFounded) {
+      setCapsulesFiltered(capsulesFounded);
+    }
     return () => {};
-  }, []);
+  }, [capsulesFounded]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

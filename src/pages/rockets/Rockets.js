@@ -8,23 +8,20 @@ import {
 } from '../../components/Search';
 import RocketResult from './RocketResult';
 import { SPACEX_API__ROCKETS } from '../../api';
+import useComponentData from '../../hooks/useComponentData';
 
 const Rockets = () => {
   const [search, setSearch] = useState('');
-  const [rocketsFounded, setRocketsFounded] = useState([]);
+  const rocketsFounded = useComponentData({
+    item: 'rockets',
+    api: SPACEX_API__ROCKETS,
+  });
   const [rocketsFiltered, setRocketsFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-  };
-
-  const getData = async () => {
-    const response = await fetch(SPACEX_API__ROCKETS);
-    const data = await response.json();
-    setRocketsFounded(data);
-    setRocketsFiltered(data);
   };
 
   const updateData = async () => {
@@ -39,9 +36,11 @@ const Rockets = () => {
   };
 
   useEffect(() => {
-    getData();
+    if (rocketsFounded) {
+      setRocketsFiltered(rocketsFounded);
+    }
     return () => {};
-  }, []);
+  }, [rocketsFounded]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

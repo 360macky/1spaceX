@@ -8,23 +8,20 @@ import {
 } from '../../components/Search';
 import LaunchResult from './LaunchResult';
 import { SPACEX_API__LAUNCHES } from '../../api';
+import useComponentData from '../../hooks/useComponentData';
 
 const Launches = () => {
   const [search, setSearch] = useState('');
-  const [launchesFounded, setLaunchesFounded] = useState([]);
+  const launchesFounded = useComponentData({
+    item: 'launches',
+    api: SPACEX_API__LAUNCHES,
+  });
   const [launchesFiltered, setLaunchesFiltered] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(null);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-  };
-
-  const getData = async () => {
-    const response = await fetch(SPACEX_API__LAUNCHES);
-    const data = await response.json();
-    setLaunchesFounded(data);
-    setLaunchesFiltered(data);
   };
 
   const updateData = async () => {
@@ -39,9 +36,11 @@ const Launches = () => {
   };
 
   useEffect(() => {
-    getData();
+    if (launchesFounded) {
+      setLaunchesFiltered(launchesFounded);
+    }
     return () => {};
-  }, []);
+  }, [launchesFounded]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
