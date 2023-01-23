@@ -18,6 +18,7 @@ export default function useComponentData({ item, api }) {
         const response = await fetch(api);
         const data = await response.json();
         setData(data);
+        localStorage.setItem(item, JSON.stringify(data));
       }
     };
     f();
