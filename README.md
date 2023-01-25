@@ -30,6 +30,10 @@
 ![Demo of 1spaceX](./.github/demo.gif)
 
 
+## 🤖 Concept
+
+1spaceX is a web app that helps you to find all the information about SpaceX components. You can find information about the capsules, cores, launches, payloads and rockets.
+
 ## 🚀 Development
 
 **1spaceX.com** is a web app built with React 18. It uses [Bootstrap](https://getbootstrap.com/) as CSS design library but I also integrate other styles for customization of the web app.
