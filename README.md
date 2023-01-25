@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="public/logo192.png"
+    src="public/icon-256x256.png"
     align="center"
     width="100"
     alt="1spaceX"
@@ -15,9 +15,7 @@
 <p align="center">
   <a href="https://nodejs.org/"><img src="https://img.shields.io/static/v1?label=Node&message=v16.12&color=339933&logo=node.js&style=for-the-badge" /></a>
   <a href="https://reactjs.org/"><img src="https://img.shields.io/static/v1?label=React&message=v18.0.0&color=61DAFB&logo=react&style=for-the-badge" /></a>
-  <a href="https://getbootstrap.com/"><img src="https://img.shields.io/static/v1?label=Bootstrap&message=v5.1.3&color=563D7C&logo=bootstrap&style=for-the-badge" /></a>
-  <a href="https://reactrouter.com/"><img src="https://img.shields.io/static/v1?label=React%20Router&message=v6.3.0&color=CA4245&logo=react-router&style=for-the-badge" /></a>
-  <a href="https://github.com/r-spacex/SpaceX-API"><img src="https://img.shields.io/static/v1?label=SpaceX%20API&message=v3&color=000000&logo=spacex&style=for-the-badge" /></a>
+  <a href="https://github.com/r-spacex/SpaceX-API"><img src="https://img.shields.io/static/v1?label=SpaceX%20API&message=v4&color=000000&logo=spacex&style=for-the-badge" /></a>
 </p>
 
 <p align="center">
@@ -27,7 +25,7 @@
 </p>
 
 
-![Demo of 1spaceX](./.github/demo.gif)
+![Demo of 1spaceX](./.github/preview.webp)
 
 
 ## 🤖 Concept
