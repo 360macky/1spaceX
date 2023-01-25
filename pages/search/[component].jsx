@@ -16,10 +16,7 @@ const Capsules = () => {
   const [isFirstSearch, setIsFirstSearch] = useState(false);
   const searchForm = useRef(null);
   const { data, result, setData } = usePhysicalData();
-  const {
-    transcript,
-    listening,
-  } = useSpeechRecognition();
+  const { transcript, listening } = useSpeechRecognition();
 
   useEffect(() => {
     if (!component) {
