@@ -52,22 +52,20 @@ const Capsules = () => {
     switch (component) {
       case 'capsules':
         return result.filter((capsule) => {
-          if (capsule.capsule_id !== null && capsule.capsule_serial !== null) {
+          if (capsule.serial !== null && capsule.last_update !== null) {
             return (
-              capsule.capsule_id.toLowerCase().includes(search.toLowerCase()) ||
-              capsule.capsule_serial
-                .toLowerCase()
-                .includes(search.toLowerCase())
+              capsule.serial.toLowerCase().includes(search.toLowerCase()) ||
+              capsule.last_update.toLowerCase().includes(search.toLowerCase())
             );
           }
           return false;
         });
       case 'cores':
         return result.filter((core) => {
-          if (core.core_serial !== null && core.details !== null) {
+          if (core.serial !== null && core.last_update !== null) {
             return (
-              core.core_serial.toLowerCase().includes(search.toLowerCase()) ||
-              core.details.toLowerCase().includes(search.toLowerCase())
+              core.serial.toLowerCase().includes(search.toLowerCase()) ||
+              core.last_update.toLowerCase().includes(search.toLowerCase())
             );
           }
           return false;
