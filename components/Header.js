@@ -9,7 +9,7 @@ const Header = () => {
     <Navbar className="dark:bg-black lg:py-6">
       <Navbar.Brand>
         <div className="flex flex-row gap-x-2">
-          <Image src={Logo} className="h-8 w-8" />
+          <Image src={Logo} className="h-8 w-8" alt="1SpaceX logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white font-space">
             1SpaceX
           </span>
@@ -18,37 +18,37 @@ const Header = () => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/"
         >
           Home
         </Link>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/search/capsules"
         >
           Capsules
         </Link>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/search/cores"
         >
           Cores
         </Link>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/search/launches"
         >
           Launches
         </Link>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/search/payloads"
         >
           Payloads
         </Link>
         <Link
-          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-300 hover:underline hover:underline-offset-4"
+          className="font-space cursor-pointer text-base dark:text-white decoration-yellow-500 dark:decoration-yellow-300 hover:underline hover:underline-offset-4"
           href="/search/rockets"
         >
           Rockets
