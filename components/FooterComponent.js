@@ -23,6 +23,7 @@ const FooterComponent = () => {
                     href="https://nextjs.org/"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Next.js
                   </a>
@@ -32,6 +33,7 @@ const FooterComponent = () => {
                     href="https://tailwindcss.com/"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Tailwind CSS
                   </a>
@@ -41,6 +43,7 @@ const FooterComponent = () => {
                     href="https://reactjs.org/"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     React
                   </a>
@@ -57,6 +60,7 @@ const FooterComponent = () => {
                     href="https://github.com/360macky/1spaceX"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Github
                   </a>
@@ -66,6 +70,7 @@ const FooterComponent = () => {
                     href="https://github.com/360macky/1spaceX/issues"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Issues
                   </a>
@@ -75,6 +80,7 @@ const FooterComponent = () => {
                     href="https://github.com/360macky/1spaceX/pulls"
                     className="hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Pull Requests
                   </a>
@@ -113,6 +119,7 @@ const FooterComponent = () => {
               href="https://github.com/360macky/1spacex"
               target="_blank"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              rel="noreferrer"
             >
               <svg
                 className="w-5 h-5"

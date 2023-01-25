@@ -28,6 +28,7 @@ const GetStarted = () => {
             href="https://github.com/360macky/1spaceX/blob/dev/LICENSE"
             target="_blank"
             className="underline underline-offset-4"
+            rel="noreferrer"
           >
             MIT License
           </a>

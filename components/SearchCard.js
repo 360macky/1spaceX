@@ -37,6 +37,7 @@ const SearchCard = ({ type, information }) => {
             href={`https://www.google.com/search?q=${information.capsule_serial}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
+            rel="noreferrer"
           >
             Search capsule
             <svg
@@ -81,6 +82,7 @@ const SearchCard = ({ type, information }) => {
             href={`https://www.google.com/search?q=${information.core_serial}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
+            rel="noreferrer"
           >
             Search capsule
             <svg
@@ -136,6 +138,7 @@ const SearchCard = ({ type, information }) => {
             href={`https://www.google.com/search?q=${information.name}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
+            rel="noreferrer"
           >
             Search capsule
             <svg
@@ -181,6 +184,7 @@ const SearchCard = ({ type, information }) => {
             href={`https://www.google.com/search?q=${information.name}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
+            rel="noreferrer"
           >
             Search capsule
             <svg
@@ -222,6 +226,7 @@ const SearchCard = ({ type, information }) => {
             href={`https://www.google.com/search?q=${information.name}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
+            rel="noreferrer"
           >
             Search capsule
             <svg
