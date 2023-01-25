@@ -180,7 +180,7 @@ const Capsules = () => {
           >
             <svg
               aria-hidden="true"
-              className="w-5 h-5 mr-2 -ml-1"
+              className="w-5 h-5 sm:mr-2 -ml-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -193,7 +193,7 @@ const Capsules = () => {
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               ></path>
             </svg>
-            Search
+            <span className="hidden sm:inline-flex">Search</span>
           </button>
         </form>
       </div>
