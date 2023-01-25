@@ -9,13 +9,13 @@ const SearchCard = ({ type, information }) => {
       {type === 'capsules' && (
         <>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">
-            {information.capsule_id}
+            {information.serial}
           </h5>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
-            <b>Capsule serial: </b>{' '}
+            <b>Last update: </b>{' '}
             <span className="capitalize">
-              {information.capsule_serial
-                ? information.capsule_serial
+              {information.last_update
+                ? information.last_update
                 : 'Not available'}
             </span>
           </p>
@@ -28,13 +28,21 @@ const SearchCard = ({ type, information }) => {
             </span>
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
+            <b>Status: </b>{' '}
+            <span className="capitalize">
+              {information.status
+                ? information.status
+                : 'Not available'}
+            </span>
+          </p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
             <b>Type: </b>{' '}
             <span className="capitalize">
               {information.type ? information.type : 'Not available'}
             </span>
           </p>
           <a
-            href={`https://www.google.com/search?q=${information.capsule_serial}`}
+            href={`https://www.google.com/search?q=${information.serial}`}
             target="_blank"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 sm:w-full"
             rel="noreferrer"
@@ -59,15 +67,26 @@ const SearchCard = ({ type, information }) => {
       {type === 'cores' && (
         <>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {information.core_serial}
+            {information.serial}
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
-            {information.details ? information.details : 'No details'}
-          </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
             <b>Status: </b>{' '}
             <span className="capitalize">
               {information.status ? information.status : 'Not available'}
+            </span>
+          </p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
+            <b>Last update: </b>{' '}
+            <span className="capitalize">
+              {information.last_update
+                ? information.last_update
+                : 'Not available'}
+            </span>
+          </p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
+            <b>ID: </b>{' '}
+            <span className="capitalize">
+              {information.id ? information.id : 'Not available'}
             </span>
           </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
