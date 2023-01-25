@@ -1,28 +1,3 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-      "arrowFunctions": true
-    },
-    "babelOptions": {
-      "presets": ["@babel/preset-react"]
-    },
-    "ecmaVersion": 11,
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
-  "rules": {
-    "react/prop-types": "off",
-    "no-use-before-define": "off",
-    "no-prototype-builtins": "off",
-    "no-nonoctal-decimal-escape": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
