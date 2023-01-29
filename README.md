@@ -38,7 +38,17 @@
 
 **1spaceX** is deployed in [Vercel](https://vercel.com/), you can visit the app in [1spaceX.com](https://1spaceX.com/).
 
-## 🚀 Development
+## 🛠 Core Development
+
+## 🖐 User Interface
+
+**1spaceX** UI is built with [TailwindCSS](https://tailwindcss.com/), a utility-first CSS framework for rapidly building custom designs. Also with [Flowbite](https://flowbite.com/), a TailwindCSS UI Kit.
+
+It is responsive and mobile-first, so you can use it in any device.
+
+Available with dark mode based on the user's system preferences.
+
+### 🛩 Deployment
 
 Run the development server:
 
