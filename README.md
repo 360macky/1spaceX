@@ -34,9 +34,7 @@
 
 ## 🚀 Development
 
-**1spaceX.com** is a web app built with React 18. It uses [Bootstrap](https://getbootstrap.com/) as CSS design library but I also integrate other styles for customization of the web app.
-
-Also, in some components the [`styled-components`](https://www.npmjs.com/package/styled-components) library is used.
+**1spaceX.com** is a web app built with Next and React 18. It uses Tailwind CSS for the styles and the [SpaceX API](https://github.com/r-spacex/SpaceX-API) for the data.
 
 There is a page for each physical component like: capsules, cores, launches, payloads and rockets.
 In each page there is a search bar, and the cards associated to that physical component.
@@ -54,27 +52,8 @@ npm install
 🚀 Run and launch
 
 ```bash
-npm start
+npm run dev
 ```
-
-🧪 Run tests
-
-```bash
-npm test
-```
-
-
-## 🎨 Design
-1spaceX has a totally responsive design based on media queries rules and Bootstrap 5 practices.
-You can test it by accessing the web from your mobile browser.
-
-<img
-  src=".github/android_screenshot.png"
-  align="center"
-  width="200"
-  alt="1spaceX on Android phone"
-  title="1spaceX on Android phone"
-/>
 
 
 ## 🧪 Testing
