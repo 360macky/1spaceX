@@ -34,28 +34,19 @@
 
 1spaceX is a web app that helps you to find all the information about SpaceX components. You can find information about the capsules, cores, launches, payloads and rockets.
 
-## 🚀 Development
-
-**1spaceX.com** is a web app built with Next and React 18. It uses Tailwind CSS for the styles and the [SpaceX API](https://github.com/r-spacex/SpaceX-API) for the data.
-
-There is a page for each physical component like: capsules, cores, launches, payloads and rockets.
-In each page there is a search bar, and the cards associated to that physical component.
-
 ## 📦 Deployment
 
-Once you have the repository **1spaceX**, run this command from the project directory:
+**1spaceX** is deployed in [Vercel](https://vercel.com/), you can visit the app in [1spaceX.com](https://1spaceX.com/).
 
-🔽 Install all dependencies...
+## 🚀 Development
 
-```bash
-npm install
-```
-
-🚀 Run and launch
+Run the development server:
 
 ```bash
 npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
 ## 🧪 Testing
@@ -75,30 +66,6 @@ describe('Suite test Footer', () => {
   });
 });
 ```
-
-
-## 📂 Folder Structure of 1spaceX App
-/src
--  **/components**: Components used in all the app (including the main App.js)
--  **/images**: Images used in the app
--  **/pages**: Pages rendered in the app. Each page has its own folder here.
--  **/utils**: Utility functions.
-
-
-## 🎁 Dependencies
-Current versions of our dependencies:
-- @fortawesome/fontawesome-svg-core: `^6.1.1`
-- @fortawesome/free-solid-svg-icons: `^6.1.1`
-- @fortawesome/react-fontawesome: `^0.1.18`
-- @testing-library/jest-dom: `^5.16.3`
-- @testing-library/react: `^13.0.0`
-- @testing-library/user-event: `^14.0.4`
-- bootstrap: `^5.1.3`
-- react: `^18.0.0`
-- react-dom: `^18.0.0`
-- react-router-dom: `^6.3.0`
-- react-scripts: `5.0.0`
-- styled-components: `5.3.5`
 
 
 ## 🤲 Contributing
