@@ -10,11 +10,13 @@
 </p>
 
 
-<p align="center">🚀 Find <a href="https://www.spacex.com/">SpaceX</a> data with this <a href="https://reactjs.org/">React App</a> 🔍</p>
+<p align="center">🚀 Find <a href="https://www.spacex.com/">SpaceX</a> physical components with this <a href="https://nextjs.org">Next.js App</a> 🔍</p>
 
 <p align="center">
   <a href="https://nodejs.org/"><img src="https://img.shields.io/static/v1?label=Node&message=v16.12&color=339933&logo=node.js&style=for-the-badge" /></a>
   <a href="https://reactjs.org/"><img src="https://img.shields.io/static/v1?label=React&message=v18.0.0&color=61DAFB&logo=react&style=for-the-badge" /></a>
+  <a href="https://nextjs.org"><img src="https://img.shields.io/static/v1?label=Next.js&message=v13.1.5&color=000000&logo=next.js&style=for-the-badge" /></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/static/v1?label=TailwindCSS&message=v3.2.4&color=06B6D4&logo=tailwindcss&style=for-the-badge" /></a>
   <a href="https://github.com/r-spacex/SpaceX-API"><img src="https://img.shields.io/static/v1?label=SpaceX%20API&message=v4&color=000000&logo=spacex&style=for-the-badge" /></a>
 </p>
 
