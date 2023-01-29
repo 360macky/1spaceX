@@ -25,7 +25,7 @@
 </p>
 
 
-![Demo of 1spaceX](./.github/preview.webp)
+![Preview of 1spaceX](./.github/preview.gif)
 
 
 ## 🤖 Concept
