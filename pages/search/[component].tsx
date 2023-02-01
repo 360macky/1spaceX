@@ -6,16 +6,17 @@ import classNames from 'classnames';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
+import { PhysicalData } from '../../hooks/usePhysicalData';
 
 const Capsules = () => {
   const router = useRouter();
   const { component } = router.query;
   const [searchText, setSearchText] = useState('');
-  const [resultFitered, setResultFitered] = useState([]);
+  const [resultFitered, setResultFitered] = useState<any>([]);
   const [numberOfResults, setNumberOfResults] = useState(10);
   const [isFirstSearch, setIsFirstSearch] = useState(false);
   const searchForm = useRef(null);
-  const { data, result, setData } = usePhysicalData();
+  const { data, result, setData }: PhysicalData = usePhysicalData();
   const { transcript, listening } = useSpeechRecognition();
 
   useEffect(() => {
