@@ -59,25 +59,6 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## 🧪 Testing
-**1spaceX** is integrated with a progressive unit-testing in the core components. This unit-testing is implemented with `@testing-library/react`.
-
-*Footer unit-testing example:*
-```javascript
-import React from 'react';
-import { render } from '@testing-library/react';
-import Footer from './Footer';
-
-describe('Suite test Footer', () => {
-  it('should render GitHub Repository of the footer', () => {
-    const { getByText } = render(<Footer />);
-    const GitHubRepositoryLink = getByText(/GitHub Repository/i);
-    expect(GitHubRepositoryLink).toBeInTheDocument();
-  });
-});
-```
-
-
 ## 🤲 Contributing
 Do you would like to contribute? Do you want to be the author of a new feature? Awesome! please fork the repository and make changes as you like. [Pull requests](https://github.com/360macky/1spaceX/pulls) are warmly welcome.
 
