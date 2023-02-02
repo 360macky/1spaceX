@@ -40,7 +40,7 @@
 
 ## 🛠 Core Development
 
-## 🖐 User Interface
+### 🖐 User Interface
 
 **1spaceX** UI is built with [TailwindCSS](https://tailwindcss.com/), a utility-first CSS framework for rapidly building custom designs. Also with [Flowbite](https://flowbite.com/), a TailwindCSS UI Kit.
 
