@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter } from 'next/router';
 import usePhysicalData from '../../hooks/usePhysicalData';
 import SearchCard from '../../components/SearchCard';
@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
+
 import { PhysicalData } from '../../hooks/usePhysicalData';
 
 const Capsules = () => {
@@ -24,7 +25,7 @@ const Capsules = () => {
       return;
     }
     setData(component);
-  }, [component]);
+  }, [component, setData]);
 
   useEffect(() => {
     if (!result) {
