@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 
-export default function usePhysicalData() {
-  const [data, setData] = useState(null);
-  const [result, setResult] = useState('');
+export interface PhysicalData {
+  data: any;
+  result: any;
+  setData: (data: any) => void;
+}
 
-  const fetchData = async (api) => {
+export default function usePhysicalData(): PhysicalData {
+  const [data, setData] = useState(null);
+  const [result, setResult] = useState<string>('');
+
+  const fetchData = async (api: string) => {
     const dataInLocalStorage = localStorage.getItem(data);
     if (dataInLocalStorage) {
       setResult(JSON.parse(dataInLocalStorage));

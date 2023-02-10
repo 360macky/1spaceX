@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import capsule from './capsule.png';
 
@@ -13,7 +14,11 @@ export default function Home() {
       </Head>
       <main>
         <section className="bg-white dark:bg-black min-h-[88vh] flex items-center">
-          <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-20 lg:grid-cols-12">
+          <motion.div
+            className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-20 lg:grid-cols-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          >
             <div className="place-self-center mr-auto lg:col-span-7">
               <h1 className="mb-4 max-w-2xl text-4xl font-extrabold font-space leading-none md:text-5xl xl:text-6xl dark:text-white">
                 Find SpaceX physical components
@@ -55,7 +60,7 @@ export default function Home() {
                 className="w-full capsule"
               />
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
     </>

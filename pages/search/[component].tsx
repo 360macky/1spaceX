@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import usePhysicalData from '../../hooks/usePhysicalData';
 import SearchCard from '../../components/SearchCard';
@@ -7,15 +8,33 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
 
-const Capsules = () => {
+import { PhysicalData } from '../../hooks/usePhysicalData';
+
+const Results = ({ data, numberOfResults, component }) => {
+  return (
+    <div
+      className="pt-8 pb-6 flex gap-x-4 gap-y-4 lg:w-[1024px] flex-wrap justify-center"
+      role="list"
+    >
+      {data.length > 0 &&
+        data
+          .slice(0, numberOfResults)
+          .map((item: any, index: number) => (
+            <SearchCard type={component} key={index} information={item} />
+          ))}
+    </div>
+  );
+};
+
+const Search: NextPage = () => {
   const router = useRouter();
   const { component } = router.query;
-  const [searchText, setSearchText] = useState('');
-  const [resultFitered, setResultFitered] = useState([]);
-  const [numberOfResults, setNumberOfResults] = useState(10);
-  const [isFirstSearch, setIsFirstSearch] = useState(false);
-  const searchForm = useRef(null);
-  const { data, result, setData } = usePhysicalData();
+  const [searchText, setSearchText] = useState<string>('');
+  const [resultFitered, setResultFitered] = useState<any>([]);
+  const [numberOfResults, setNumberOfResults] = useState<number>(10);
+  const [isFirstSearch, setIsFirstSearch] = useState<boolean>(false);
+  const searchForm = useRef<HTMLFormElement>(null);
+  const { result, setData }: PhysicalData = usePhysicalData();
   const { transcript, listening } = useSpeechRecognition();
 
   useEffect(() => {
@@ -23,7 +42,7 @@ const Capsules = () => {
       return;
     }
     setData(component);
-  }, [component]);
+  }, [component, setData]);
 
   useEffect(() => {
     if (!result) {
@@ -40,6 +59,10 @@ const Capsules = () => {
     return () => {};
   }, [transcript, listening]);
 
+  /**
+   * @name speechToText
+   * @description Function to start and stop the speech recognition
+   */
   const speechToText = () => {
     if (listening) {
       SpeechRecognition.stopListening();
@@ -48,7 +71,15 @@ const Capsules = () => {
     }
   };
 
-  const filterSearch = (result, component, search) => {
+  /**
+   * @name filterSearch
+   * @description Function to filter the search by component and by search text
+   * @param {Array} result
+   * @param {String} component
+   * @param {String} search
+   * @returns
+   */
+  const filterSearch = (result: any[], component: string, search: string) => {
     switch (component) {
       case 'capsules':
         return result.filter((capsule) => {
@@ -98,19 +129,23 @@ const Capsules = () => {
     }
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isFirstSearch) {
       setIsFirstSearch(true);
     }
-    const searchResponse = filterSearch(result, component, searchText);
+    const searchResponse = filterSearch(
+      result,
+      component as string,
+      searchText
+    );
     setResultFitered(searchResponse);
   };
   return (
     <main className="flex justify-center items-center flex-col min-h-[76vh]">
       <div className="flex flex-col justify-center md:w-[768px] gap-y-4 text-center">
         <div className="flex justify-center py-10">
-          <h1 className="dark:text-white text-5xl md:text-6xl dark:text-transparent font-space capitalize bg-clip-text bg-gradient-to-t font-bold from-yellow-500 to-yellow-600">
+          <h1 className="dark:text-white text-5xl md:text-6xl font-space capitalize">
             {component}
           </h1>
         </div>
@@ -204,17 +239,12 @@ const Capsules = () => {
         >
           <p>{resultFitered.length} results that matched your search</p>
         </div>
-        <div
-          className="pt-8 pb-6 flex gap-x-4 gap-y-4 lg:w-[1024px] flex-wrap justify-center"
-          role="list"
-        >
-          {resultFitered.length > 0 &&
-            resultFitered
-              .slice(0, numberOfResults)
-              .map((item, index) => (
-                <SearchCard type={component} key={index} information={item} />
-              ))}
-        </div>
+        {/* TODO: Add Suspense loading when is fully supported by Next.js 13 */}
+        <Results
+          data={resultFitered}
+          numberOfResults={numberOfResults}
+          component={component}
+        />
         {resultFitered.length >= 10 && (
           <button
             className="self-center px-5 py-3 font-medium text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
@@ -230,4 +260,4 @@ const Capsules = () => {
   );
 };
 
-export default Capsules;
+export default Search;

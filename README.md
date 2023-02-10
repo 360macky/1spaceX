@@ -40,7 +40,7 @@
 
 ## 🛠 Core Development
 
-## 🖐 User Interface
+### 🖐 User Interface
 
 **1spaceX** UI is built with [TailwindCSS](https://tailwindcss.com/), a utility-first CSS framework for rapidly building custom designs. Also with [Flowbite](https://flowbite.com/), a TailwindCSS UI Kit.
 
@@ -57,25 +57,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
-## 🧪 Testing
-**1spaceX** is integrated with a progressive unit-testing in the core components. This unit-testing is implemented with `@testing-library/react`.
-
-*Footer unit-testing example:*
-```javascript
-import React from 'react';
-import { render } from '@testing-library/react';
-import Footer from './Footer';
-
-describe('Suite test Footer', () => {
-  it('should render GitHub Repository of the footer', () => {
-    const { getByText } = render(<Footer />);
-    const GitHubRepositoryLink = getByText(/GitHub Repository/i);
-    expect(GitHubRepositoryLink).toBeInTheDocument();
-  });
-});
-```
 
 
 ## 🤲 Contributing
