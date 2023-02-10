@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import usePhysicalData from '../../hooks/usePhysicalData';
 import SearchCard from '../../components/SearchCard';
@@ -9,15 +10,31 @@ import SpeechRecognition, {
 
 import { PhysicalData } from '../../hooks/usePhysicalData';
 
-const Capsules = () => {
+const Results = ({ data, numberOfResults, component }) => {
+  return (
+    <div
+      className="pt-8 pb-6 flex gap-x-4 gap-y-4 lg:w-[1024px] flex-wrap justify-center"
+      role="list"
+    >
+      {data.length > 0 &&
+        data
+          .slice(0, numberOfResults)
+          .map((item, index: number) => (
+            <SearchCard type={component} key={index} information={item} />
+          ))}
+    </div>
+  );
+};
+
+const Search: NextPage = () => {
   const router = useRouter();
   const { component } = router.query;
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState<string>('');
   const [resultFitered, setResultFitered] = useState<any>([]);
   const [numberOfResults, setNumberOfResults] = useState(10);
   const [isFirstSearch, setIsFirstSearch] = useState(false);
   const searchForm = useRef(null);
-  const { data, result, setData }: PhysicalData = usePhysicalData();
+  const { result, setData }: PhysicalData = usePhysicalData();
   const { transcript, listening } = useSpeechRecognition();
 
   useEffect(() => {
@@ -206,17 +223,13 @@ const Capsules = () => {
         >
           <p>{resultFitered.length} results that matched your search</p>
         </div>
-        <div
-          className="pt-8 pb-6 flex gap-x-4 gap-y-4 lg:w-[1024px] flex-wrap justify-center"
-          role="list"
-        >
-          {resultFitered.length > 0 &&
-            resultFitered
-              .slice(0, numberOfResults)
-              .map((item, index) => (
-                <SearchCard type={component} key={index} information={item} />
-              ))}
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Results
+            data={resultFitered}
+            numberOfResults={numberOfResults}
+            component={component}
+          />
+        </Suspense>
         {resultFitered.length >= 10 && (
           <button
             className="self-center px-5 py-3 font-medium text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
@@ -232,4 +245,4 @@ const Capsules = () => {
   );
 };
 
-export default Capsules;
+export default Search;
