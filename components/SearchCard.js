@@ -1,10 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SearchCard = ({ type, information }) => {
   return (
-    <div
+    <motion.div
       className="w-9/12 p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:hover:border-gray-600 dark:border-gray-700"
       role="listitem"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
     >
       {type === 'capsules' && (
         <>
@@ -262,7 +266,7 @@ const SearchCard = ({ type, information }) => {
           </a>
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 
