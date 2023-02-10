@@ -5,7 +5,9 @@ const GetStarted: NextPage = () => {
   return (
     <main className="flex justify-center py-8 min-h-[88vh]">
       <div className="lg:w-[1024px] border border-1 rounded-lg p-10">
-        <h1 className="text-4xl font-bold leading-loose text-center">What is 1SpaceX</h1>
+        <h1 className="text-4xl font-bold leading-loose text-center">
+          What is 1SpaceX
+        </h1>
         <p>
           1spaceX is a web app that helps you to find all the information about
           SpaceX components. You can find information about the capsules, cores,
