@@ -6,7 +6,7 @@
     alt="1spaceX"
     title="1spaceX"
   />
-  <h1 align="center">1spaceX.com</h1>
+  <h1 align="center">1spaceX</h1>
 </p>
 
 
